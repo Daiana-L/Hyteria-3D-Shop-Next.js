@@ -20,7 +20,7 @@ export default function ProductCard({ product}: Props) {
 
     return (
         <div
-            className="bg-white rounded-lg shadow-md overflow-hidden mt-10 h-[600px] flex flex-col group"
+            className="bg-white rounded-lg shadow-md overflow-hidden mt-12 h-[600px] flex flex-col group"
             data-aos="fade-right"
             data-aos-delay="100"
         >
