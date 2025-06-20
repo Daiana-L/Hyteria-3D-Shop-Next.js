@@ -16,7 +16,7 @@ export default function RootLayout({
     return (
         <html lang="es">
             <head>
-                <link href="/assets/img/pet.png" />
+                <link rel="icon" href="/assets/img/pet.png" />
             </head>
             <body>
                 <AOSInitializer />
