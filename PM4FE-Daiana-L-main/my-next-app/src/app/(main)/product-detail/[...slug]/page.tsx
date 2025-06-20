@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Params } from "@/types";
 import { SearchParams } from "@/types";
 import Head from "next/head";
-import AddToCartButton from "@/components/UI/CartAddBtn";
+import AddToCartButton from "@/components/ui/cartAddBtn";
 export default async function ProductDetail(props: {
     params: Params;
     searchParams: SearchParams;

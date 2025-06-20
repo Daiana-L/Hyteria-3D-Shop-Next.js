@@ -1,6 +1,6 @@
 import { MoveRight, Home } from "lucide-react";
-import { Button } from "@/components/UI/button";
-import { Badge } from "@/components/UI/badge";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import hysteriaImgs from "../../../public/assets/img/landing1.jpg";
 import Link from "next/link";

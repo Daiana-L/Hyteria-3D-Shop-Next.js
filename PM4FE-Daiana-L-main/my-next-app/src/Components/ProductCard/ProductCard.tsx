@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Product } from "../../types/index";
 import { routes } from "@/routes";
 import Link from "next/link";
-import AddToCartButton from "../UI/CartAddBtn";
+import AddToCartButton from "../ui/cartAddBtn";
 
 interface Props {
     product: Product;

@@ -1,7 +1,7 @@
 "use client";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
-import Fantasmita from "./Fantasmita";
+import Fantasmita from "./fantasmita";
 
 export default function Escena3D() {
     return (

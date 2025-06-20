@@ -1,6 +1,6 @@
 import { fetchProductsByCategoryId } from "@/components/api/fetchProducts";
 import { Product } from "@/types";
-import ProductCard from "@/components/ProductCard/ProductCard";
+import ProductCard from "@/components/productCard/ProductCard";
 
 type Props = {
     params: { id: string };

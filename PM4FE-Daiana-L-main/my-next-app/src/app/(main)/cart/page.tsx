@@ -6,7 +6,7 @@ import { useCartContext } from "@/context/cartContext";
 import { Product } from "../../../types/index";
 import { toast } from "react-toastify";
 import { useAuthContext } from "../../../context/authContex";
-import { createOrder } from "../../../components/api/Auth/fetchOrders";
+import { createOrder } from "../../../components/api/auth/fetchOrders";
 import { FaTrashAlt } from "react-icons/fa";
 import CardImage from "../../../../public/assets/img/metodos de pago.png";
 import CardImage2 from "../../../../public/assets/img/envios.png";

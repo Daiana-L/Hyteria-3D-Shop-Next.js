@@ -1,7 +1,7 @@
 
 import "../styles/globals.css";
 import type { Metadata } from "next";
-import AOSInitializer from "../components/models/AOSInitializer";
+import AOSInitializer from "../components/models/aosInitializer";
 
 export const metadata: Metadata = {
     title: "Hysteria_3D | Shop",
