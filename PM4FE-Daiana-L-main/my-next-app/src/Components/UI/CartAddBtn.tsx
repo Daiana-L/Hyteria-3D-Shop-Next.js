@@ -3,8 +3,8 @@
 import { useRouter } from "next/navigation";
 import { useAuthContext } from "@/context/authContex";
 import { useCartContext } from "@/context/cartContext";
-import { routes } from "@/Routes";
-import { Product } from "../../Types/index";
+import { routes } from "@/routes";
+import { Product } from "../../types/index";
 import { toast } from "react-toastify";
 
 interface Props {

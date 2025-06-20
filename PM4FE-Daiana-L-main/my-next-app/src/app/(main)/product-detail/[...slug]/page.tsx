@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { Params } from "@/Types";
-import { SearchParams } from "@/Types";
+import { Params } from "@/types";
+import { SearchParams } from "@/types";
 import Head from "next/head";
-import AddToCartButton from "@/Components/UI/CartAddBtn";
+import AddToCartButton from "@/components/UI/CartAddBtn";
 export default async function ProductDetail(props: {
     params: Params;
     searchParams: SearchParams;

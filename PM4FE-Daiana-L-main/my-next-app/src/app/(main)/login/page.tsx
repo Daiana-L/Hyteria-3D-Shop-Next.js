@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { loginUser } from "../../../Components/api/Auth/fetchAuth";
+import { loginUser } from "../../../components/api/Auth/fetchAuth";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";

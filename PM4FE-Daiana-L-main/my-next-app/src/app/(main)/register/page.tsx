@@ -2,7 +2,7 @@
 
 import React, { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { registerUser } from "../../../Components/api/Auth/fetchAuth";
+import { registerUser } from "../../../components/api/Auth/fetchAuth";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";

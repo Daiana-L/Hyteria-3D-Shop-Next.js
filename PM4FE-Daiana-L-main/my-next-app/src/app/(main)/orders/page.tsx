@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import { useAuthContext } from "../../../context/authContex";
-import { Order, OrderStatus } from "../../../Types/index";
+import { Order, OrderStatus } from "../../../types/index";
 import { toast } from "react-toastify";
-import { getUserOrders } from "../../../Components/api/Auth/fetchOrders";
+import { getUserOrders } from "../../../components/api/Auth/fetchOrders";
 import { FaBoxOpen } from "react-icons/fa";
 import Image from "next/image";
 import AOS from "aos";

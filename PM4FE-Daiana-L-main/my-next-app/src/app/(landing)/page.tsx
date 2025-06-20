@@ -1,10 +1,10 @@
 import { MoveRight, Home } from "lucide-react";
-import { Button } from "@/Components/UI/button";
-import { Badge } from "@/Components/UI/badge";
+import { Button } from "@/components/UI/button";
+import { Badge } from "@/components/UI/badge";
 import Image from "next/image";
 import hysteriaImgs from "../../../public/assets/img/landing1.jpg";
 import Link from "next/link";
-import { routes } from "../../Routes/index";
+import { routes } from "../../routes/index";
 export default function Page() {
     return (
         <div className="w-full py-10 lg:py-20">

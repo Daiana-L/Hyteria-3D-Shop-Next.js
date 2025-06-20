@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect } from "react";
-import { Product } from "../Types/index";
+import { Product } from "../types/index";
 
 type CartItem = Partial<Product> & { quantity: number };
 

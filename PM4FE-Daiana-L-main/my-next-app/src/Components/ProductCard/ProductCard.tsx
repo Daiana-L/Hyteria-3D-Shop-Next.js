@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Product } from "../../Types/index";
-import { routes } from "@/Routes";
+import { Product } from "../../types/index";
+import { routes } from "@/routes";
 import Link from "next/link";
 import AddToCartButton from "../UI/CartAddBtn";
 

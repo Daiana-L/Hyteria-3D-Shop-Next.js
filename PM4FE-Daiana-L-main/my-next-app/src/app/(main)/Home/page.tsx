@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import ProductList from "../../../Components/ProductCard/ProductList";
-import { Feature1 } from "@/Components/UI/Homelanding";
-import { Product } from "../../../Types/index";
-import { fetchAllProducts } from "../../../Components/api/fetchProducts";
-import CategoriesHome from "@/Components/UI/categorysHome";
+import ProductList from "../../../components/ProductCard/ProductList";
+import { Feature1 } from "@/components/UI/Homelanding";
+import { Product } from "../../../types/index";
+import { fetchAllProducts } from "../../../components/api/fetchProducts";
+import CategoriesHome from "@/components/UI/categorysHome";
 
 export default function HomePage() {
     const [products, setProducts] = useState<Product[]>([]);

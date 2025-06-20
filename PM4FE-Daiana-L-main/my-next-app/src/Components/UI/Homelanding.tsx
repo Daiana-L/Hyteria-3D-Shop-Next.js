@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import { Badge } from "@/Components/UI/badge";
+import { Badge } from "@/components/UI/badge";
 import Escena3D from "../models/Escena3D";
 
 export const Feature1 = () => (
