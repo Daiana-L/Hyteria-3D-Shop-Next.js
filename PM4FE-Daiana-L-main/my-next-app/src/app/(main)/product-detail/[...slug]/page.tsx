@@ -1,22 +1,24 @@
 import Image from "next/image";
-import { Params } from "@/types";
-import { SearchParams } from "@/types";
 import Head from "next/head";
 import AddToCartButton from "@/components/ui/CartAddBtn";
-export default async function ProductDetail(props: {
-    params: Params;
-    searchParams: SearchParams;
-}) {
-    const params = await props.params;
-    const [id = undefined, ...slug] = params.slug;
-    const res = await fetch(`http://localhost:3001/products/${id}`, {
-        cache: "no-store",
-    });
-    console.log(slug);
+import { Params } from "@/types";
+
+export default async function ProductDetail({ params }: { params: Params }) {
+    const [id] = params.slug;
+
+    const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/products/${id}`,
+        {
+            cache: "no-store",
+        }
+    );
+
     if (!res.ok) {
         return <p>Producto no encontrado</p>;
     }
+
     const product = await res.json();
+
     return (
         <>
             <Head>
@@ -36,6 +38,7 @@ export default async function ProductDetail(props: {
                                 height={800}
                             />
                         )}
+
                         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                             <h2 className="text-sm title-font text-gray-500 tracking-widest">
                                 Hysteria_3D

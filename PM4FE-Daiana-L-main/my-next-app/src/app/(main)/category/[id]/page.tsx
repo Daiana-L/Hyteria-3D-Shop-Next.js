@@ -6,8 +6,7 @@ type Props = {
     params: { id: string };
 };
 
-export default async function CategoryPage(props: Promise<Props>) {
-    const { params } = await props;
+export default async function CategoryPage({ params }: Props) {
     const categoryId = Number(params.id);
     const products: Product[] = await fetchProductsByCategoryId(categoryId);
 
