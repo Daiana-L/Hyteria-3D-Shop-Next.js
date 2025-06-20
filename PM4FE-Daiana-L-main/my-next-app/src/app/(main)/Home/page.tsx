@@ -5,7 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import ProductList from "../../../components/productsConteiner/productList";
-import { Feature1 } from "../../../components/ui/homelanding";
+import { Feature1 } from "../../../components/ui/Homelanding";
 import { Product } from "../../../types/index";
 import { fetchAllProducts } from "../../../components/api/fetchProducts";
 import CategoriesHome from "../../../components/ui/categorysHome";
