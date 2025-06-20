@@ -5,7 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import ProductList from "../../../components/productsConteiner/productList";
-import { Feature1 } from "../../../components/ui/Homelanding";
+
 import { Product } from "../../../types/index";
 import { fetchAllProducts } from "../../../components/api/fetchProducts";
 import CategoriesHome from "../../../components/ui/categorysHome";
@@ -36,7 +36,7 @@ export default function HomePage() {
     return (
         <div>
             <div data-aos="fade-down">
-                <Feature1 />
+              
             </div>
 
             <div data-aos="fade-up">
