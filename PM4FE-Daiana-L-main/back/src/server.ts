@@ -5,7 +5,10 @@ import morgan from "morgan";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://hyteria-3-d-shop-next-js-rlg9.vercel.app"
+}));
+
 app.use(express.json());
 app.use(morgan("dev"));
 

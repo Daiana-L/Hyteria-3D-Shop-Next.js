@@ -3,7 +3,6 @@ export const routes = {
     home: "/Home",
     categorias: "/categorias",
     contacto: "/contacto",
-    search: "/search",
     cart: "/cart",
     login: "/login",
     register: "/register",
