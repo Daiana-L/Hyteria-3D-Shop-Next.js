@@ -3,7 +3,7 @@ import { useGLTF, Center } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 export default function Fantasmita(props) {
-    const { scene } = useGLTF("/assets/fantasmita3.glb");
+    const { scene } = useGLTF("/public/img/fantasmita3.glb");
     const ref = useRef();
 
     useFrame((state) => {
