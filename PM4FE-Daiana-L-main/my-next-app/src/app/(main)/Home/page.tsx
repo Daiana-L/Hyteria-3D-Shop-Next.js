@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import ProductList from "../../../components/productCard/productList";
+import ProductList from "../../../components/productsConteiner/productList";
 import { Feature1 } from "@/components/ui/homelanding";
 import { Product } from "../../../types/index";
 import { fetchAllProducts } from "../../../components/api/fetchProducts";
