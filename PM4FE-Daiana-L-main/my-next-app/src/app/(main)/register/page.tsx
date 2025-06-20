@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { registerUser } from "../../../components/api/auth/fetchAuth";
 import Image from "next/image";
@@ -30,7 +30,6 @@ type FormData = yup.InferType<typeof schema>;
 export default function RegisterForm() {
     const [registroExitoso, setRegistroExitoso] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const [loading, setLoading] = useState(false);
 
     const router = useRouter();
 
@@ -46,7 +45,6 @@ export default function RegisterForm() {
     const onSubmit = async (data: FormData) => {
         setError(null);
         setRegistroExitoso(false);
-        setLoading(true);
         try {
             await registerUser(data);
             toast.success("¡Registro exitoso!");
@@ -68,7 +66,10 @@ export default function RegisterForm() {
         });
     }, []);
     return (
-        <div className="bg-white p-8 rounded-2xl shadow-lg w-[65vh] mt-8"  data-aos="fade-down">
+        <div
+            className="bg-white p-8 rounded-2xl shadow-lg w-[65vh] mt-8"
+            data-aos="fade-down"
+        >
             <div className="relative bg-white p-4 rounded-2xl w-full">
                 <div className="absolute -top-16 left-1/2 transform ml-28">
                     <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md bg-indigo-100">
@@ -188,9 +189,8 @@ export default function RegisterForm() {
                     <button
                         type="submit"
                         className="w-full bg-indigo-500 hover:bg-sky-500 text-white font-semibold py-3 text-lg rounded-lg transition"
-                        disabled={loading}
                     >
-                        {loading ? "Registrando..." : "Registrarse"}
+                        Registrarse
                     </button>
                 </form>
 
