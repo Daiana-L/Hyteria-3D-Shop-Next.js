@@ -1,6 +1,5 @@
-
 export async function createOrder(userId: number, products: number[], token: string) {
-    const response = await fetch("http://localhost:3001/orders", {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/orders`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -17,9 +16,8 @@ export async function createOrder(userId: number, products: number[], token: str
     return await response.json();
 }
 
-
 export async function getUserOrders(token: string) {
-    const response = await fetch("http://localhost:3001/users/orders", {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/orders`, {
         method: "GET",
         headers: {
             Authorization: token 
@@ -33,4 +31,3 @@ export async function getUserOrders(token: string) {
 
     return await response.json();
 }
-

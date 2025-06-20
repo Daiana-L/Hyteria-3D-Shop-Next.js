@@ -1,5 +1,5 @@
 export async function fetchAllProducts() {
-    const res = await fetch("http://localhost:3001/products", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`, {
         cache: "no-store",
     });
 
@@ -7,8 +7,11 @@ export async function fetchAllProducts() {
 
     return await res.json();
 }
+
 export async function fetchProductsByCategoryId(id: number) {
-    const response = await fetch(`http://localhost:3001/products/category/${id}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/category/${id}`, {
+        cache: "no-store",
+    });
     if (!response.ok) {
         throw new Error("Error al obtener productos por categoría");
     }
