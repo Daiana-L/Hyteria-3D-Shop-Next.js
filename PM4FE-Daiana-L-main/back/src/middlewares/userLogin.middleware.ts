@@ -14,7 +14,7 @@ const validateUserExists = async (
 ) => {
   const { email } = req.body;
   if (!(await checkUserExists(email)))
-    next({ message: "User does not exist", statusCode: 400 });
+    next({ message: "El usuario no existe", statusCode: 400 });
   else next();
 };
 

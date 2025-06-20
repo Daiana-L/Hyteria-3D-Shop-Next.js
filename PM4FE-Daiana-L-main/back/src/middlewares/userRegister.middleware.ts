@@ -20,7 +20,7 @@ const validateUserExists = async (
 ) => {
   const { email } = req.body;
   if (await checkUserExists(email))
-    next(new ClientError("User already exists", 400));
+    next(new ClientError("El usurio ya existe", 400));
   else next();
 };
 
