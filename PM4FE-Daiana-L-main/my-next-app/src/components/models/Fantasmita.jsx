@@ -5,7 +5,7 @@ import { useGLTF, Center } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 export default function Fantasmita(props) {
-    const { scene } = useGLTF("/img/fantasmita3.glb");
+    const { scene } = useGLTF("/assets/img/fantasmita3.glb");
     const ref = useRef();
 
     useFrame((state) => {
@@ -26,4 +26,4 @@ export default function Fantasmita(props) {
 }
 
 
-useGLTF.preload("/img/fantasmita3.glb");
+useGLTF.preload("/assets/img/fantasmita3.glb");
