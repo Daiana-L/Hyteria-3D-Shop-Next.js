@@ -114,9 +114,9 @@ export default function Navbar() {
                     </li>
                 </ul>
                 <div className="flex items-center text-white">
-                    <li className="mx-6">
+                    <a className="mx-6">
                         <IoSearchOutline className="w-10 h-6" />
-                    </li>
+                    </a>
                     <Link href={routes.cart} className="mx-2 text-white">
                         <div className="relative">
                             {itemsCount > 0 && (
