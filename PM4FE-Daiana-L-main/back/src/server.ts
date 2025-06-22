@@ -2,10 +2,11 @@ import express, { NextFunction, Request, Response } from "express";
 import cors from "cors";
 import router from "./routes";
 import morgan from "morgan";
+import { FRONTEND_URL } from "./config/envs";
 
 const app = express();
 
-app.use(cors({ origin: '*' }));
+app.use(cors({ origin: FRONTEND_URL }));
 app.use(express.json());
 app.use(morgan("dev"));
 
