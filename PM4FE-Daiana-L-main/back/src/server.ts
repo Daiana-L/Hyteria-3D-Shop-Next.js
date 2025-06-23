@@ -12,6 +12,8 @@ app.use(morgan("dev"));
 
 app.use(router);
 
+console.log(FRONTEND_URL)
+
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   res.status(err.statusCode || 500).send({
     statusCode: err.statusCode || 500,
