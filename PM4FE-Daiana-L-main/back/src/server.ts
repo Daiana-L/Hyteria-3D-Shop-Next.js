@@ -1,12 +1,29 @@
 import express, { NextFunction, Request, Response } from "express";
-import cors from "cors";
+import cors, { CorsOptions, CorsOptionsDelegate } from 'cors';
 import router from "./routes";
 import morgan from "morgan";
-import { FRONTEND_URL } from "./config/envs";
+import { FRONTEND_URL, CRONJOB_URL } from "./config/envs";
 
 const app = express();
 
-app.use(cors({ origin: FRONTEND_URL}));
+const allowedOrigins: string[] = [FRONTEND_URL, CRONJOB_URL];
+
+const corsOptions: CorsOptions = {
+  origin: (origin, callback) => {
+    if (!origin) {
+      callback(null, true);
+      return;
+    }
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Origen no permitido por CORS"));
+    }
+  },
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan("dev"));
 
