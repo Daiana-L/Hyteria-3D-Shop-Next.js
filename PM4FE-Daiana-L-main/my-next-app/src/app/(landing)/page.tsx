@@ -63,7 +63,7 @@ export default function Page() {
                         <Image
                             src={hysteriaImgs}
                             alt="productos"
-                            width={1000}
+                            width={2000}
                         />
                     </div>
                 </div>
