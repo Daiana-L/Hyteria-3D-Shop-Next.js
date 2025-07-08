@@ -70,7 +70,7 @@ export default function LoginForm() {
 
     return (
         <div
-            className="relative bg-white lg:p-8 xs:p-0 rounded-2xl shadow-lg lg:w-[60vh] xs:w-[42vh] lg:mt-20 xs:mt-16"
+            className="relative bg-white lg:p-8 xs:p-0 rounded-2xl shadow-lg lg:w-[60vh] xs:w-[48vh] lg:mt-20 xs:mt-20"
             data-aos="fade-down"
         >
             <div className="bg-white p-8 rounded-2xl w-full max-w-sm">
