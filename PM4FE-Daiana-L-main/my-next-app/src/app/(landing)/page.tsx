@@ -9,8 +9,8 @@ export default function Page() {
     return (
         <div>
             
-            <div className="py-10 lg:py-20 ">
-            <div className="">
+            <div className="py-10 lg:py-20 xs:p-6 xs:py-6">
+            <div className="lg:container lg:mx-auto">
                 <div className="grid grid-cols-1 gap-8 items-center lg:grid-cols-2">
                     <div
                         className="flex gap-4 xs:gap-2 flex-col"
