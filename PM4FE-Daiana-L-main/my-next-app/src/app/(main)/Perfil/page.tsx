@@ -25,7 +25,7 @@ export default function Perfil() {
 
     if (!user) {
         return (
-                <div className="flex flex-col justify-center lg:mt-10 ">
+                <div className="flex flex-col justify-center lg:mt-10 xs:mt-4 ">
                 <Image
                     src="/assets/img/pet6.png"
                     alt="Avatar de usuario"
