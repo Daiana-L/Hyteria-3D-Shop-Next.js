@@ -70,66 +70,9 @@ export default function LoginForm() {
 
     return (
         <div
-            className="relative bg-white lg:p-8 xs:p-0 rounded-2xl shadow-lg lg:w-[60vh] xs:w-[40vh] lg:mt-20 xs:mt-16"
+            className="relative bg-white lg:p-8 xs:p-0 rounded-2xl shadow-lg lg:w-[60vh] xs:w-[42vh] lg:mt-20 xs:mt-16"
             data-aos="fade-down"
         >
-            <Image
-                src="/assets/img/estrella.png"
-                alt="Estrella decorativa"
-                width={40}
-                height={40}
-                className="absolute top-[-10px] left-[-10px] animate-pulse"
-            />
-            <Image
-                src="/assets/img/estrella.png"
-                alt="Estrella decorativa"
-                width={25}
-                height={25}
-                className="absolute top-[-10px] right-[-10px] animate-pulse"
-            />
-            <Image
-                src="/assets/img/estrella.png"
-                alt="Estrella decorativa"
-                width={20}
-                height={20}
-                className="absolute bottom-[-10px] left-[-10px] animate-pulse"
-            />
-            <Image
-                src="/assets/img/estrella.png"
-                alt="Estrella decorativa"
-                width={40}
-                height={40}
-                className="absolute bottom-[-10px] right-[-10px] animate-pulse"
-            />
-            <Image
-                src="/assets/img/estrella.png"
-                alt="Estrella decorativa"
-                width={25}
-                height={25}
-                className="absolute bottom-[40vh] right-[-10px] animate-pulse"
-            />
-            <Image
-                src="/assets/img/estrella.png"
-                alt="Estrella decorativa"
-                width={25}
-                height={25}
-                className="absolute bottom-[20vh] left-[-10px] animate-pulse"
-            />
-            <Image
-                src="/assets/img/estrella.png"
-                alt="Estrella decorativa"
-                width={25}
-                height={25}
-                className="absolute bottom-[40vh] left-[-10px] animate-pulse"
-            />
-            <Image
-                src="/assets/img/estrella.png"
-                alt="Estrella decorativa"
-                width={30}
-                height={20}
-                className="absolute bottom-[15vh] right-[-10px] animate-pulse"
-            />
-
             <div className="bg-white p-8 rounded-2xl w-full max-w-sm">
                 <div className="absolute -top-10 left-1/2 transform ml-20">
                     <div className="lg:w-32 lg:h-32 xs:w-20 xs:h-20 rounded-full overflow-hidden border-4 border-white shadow-md bg-indigo-100">

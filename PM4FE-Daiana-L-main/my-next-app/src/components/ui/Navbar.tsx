@@ -26,7 +26,7 @@ export default function Navbar() {
     const { itemsCount } = useCartContext();
     return (
         <nav className="fixed top-0  w-full lg:bg-indigo-600/95 xs:bg-violet-600/95 backdrop-blur-md shadow z-50">
-            <div className="flex items-center justify-between px-5 py-3">
+            <div className="flex items-center justify-between px-5  lg:py-3">
                 <Link href={routes.home} className="flex items-center">
                     <Image src={logo} alt="logo" width={140} priority />
                 </Link>
