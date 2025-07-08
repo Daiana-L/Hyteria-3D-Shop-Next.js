@@ -5,12 +5,13 @@ import { useAuthContext } from "../../../context/authContex";
 import Image from "next/image";
 import AOSInitializer from "@/components/models/AOSInitializer";
 import "aos/dist/aos.css";
-
+import { routes } from "@/routes";
+import Link from "next/link";
 export default function Perfil() {
     const { user } = useAuthContext();
     const [isEditing, setIsEditing] = useState(false);
     const [address, setAddress] = useState("");
-    <AOSInitializer />
+    <AOSInitializer />;
     useEffect(() => {
         if (user?.address) {
             setAddress(user.address);
@@ -24,16 +25,29 @@ export default function Perfil() {
 
     if (!user) {
         return (
-            <p className="text-center text-lg mt-10 text-gray-500">
-                inicia sesion para ver tu perfil
-            </p>
+            <div>
+                <Image
+                    src="/assets/img/pet1.png"
+                    alt="Avatar de usuario"
+                    width={228}
+                    height={128}
+                    className="object-contain"
+                />
+                <p className="text-center text-lg mt-10 text-gray-500">
+                    inicia sesion para ver tu perfil
+                </p>
+                <Link href={routes.login}>
+                    Home
+                </Link>
+            </div>
         );
-    };
-
-    
+    }
 
     return (
-        <section className="flex justify-center items-center xs:mt-20 lg:mt-28 bg-gray-100" data-aos="fade-down">
+        <section
+            className="flex justify-center items-center xs:mt-20 lg:mt-28 bg-gray-100"
+            data-aos="fade-down"
+        >
             <div className="bg-white p-8 rounded-3xl shadow-xl relative lg:w-[160vh]">
                 <div className="absolute -top-16 left-1/2 transform -translate-x-1/2">
                     <div className="lg:w-32 lg:h-32 xs:w-24 xs:h-24 rounded-full overflow-hidden border-4 border-white shadow-md bg-indigo-100">
