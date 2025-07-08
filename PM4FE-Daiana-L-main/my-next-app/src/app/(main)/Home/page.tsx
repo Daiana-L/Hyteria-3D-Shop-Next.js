@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import AOSInitializer from "../../../components/models/AOSInitializer";
 import "aos/dist/aos.css";
-import ProductList from "../../../components/productsConteiner/ProductList";
+import ProductList from "../../../components/productsConteiner/productList";
 import { Feature1 } from "../../../components/ui/Homelanding";
 import { Product } from "../../../types/index";
 import { fetchAllProducts } from "../../../components/api/fetchProducts";
