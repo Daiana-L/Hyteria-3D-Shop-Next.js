@@ -32,7 +32,7 @@ export default function HomePage() {
                 <Feature1 />
             </div>
 
-            <div data-aos="fade-up">
+            <div id="productos" data-aos="fade-up">
                 <CategoriesHome />
             </div>
 

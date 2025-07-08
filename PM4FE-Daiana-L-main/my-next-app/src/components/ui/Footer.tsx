@@ -9,17 +9,17 @@ const Footer = () => {
                     <Image src={logo} width={100} alt="logo" />
                 </div>
                 <div className="flex justify-center lg:flex-row gap-4 text-sm lg:ml-20 xs:mb-2">
-                    <a href="#" className="hover:underline">
+                    <a href="/Home" className="hover:underline">
                         Inicio
                     </a>
-                    <a href="#" className="hover:underline">
+                    <a href="#productos" className="hover:underline">
                         Productos
                     </a>
-                    <a href="#" className="hover:underline">
-                        Sobre nosotros
-                    </a>
-                    <a href="#" className="hover:underline">
+                    <a href="/contacto" className="hover:underline">
                         Contacto
+                    </a>
+                    <a href="/ayuda" className="hover:underline">
+                        Ayuda
                     </a>
                 </div>
                 <div className="text-l flex flex-col md:flex-row gap-4 items-center">
