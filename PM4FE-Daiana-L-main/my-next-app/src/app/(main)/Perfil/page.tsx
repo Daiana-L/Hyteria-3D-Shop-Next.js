@@ -25,20 +25,19 @@ export default function Perfil() {
 
     if (!user) {
         return (
-            <div>
+                <div className="flex flex-col justify-center lg:mt-10 ">
                 <Image
-                    src="/assets/img/pet1.png"
+                    src="/assets/img/pet6.png"
                     alt="Avatar de usuario"
-                    width={228}
+                    width={128}
                     height={128}
-                    className="object-contain"
+                    className="object-contain ml-16"
                 />
-                <p className="text-center text-lg mt-10 text-gray-500">
-                    inicia sesion para ver tu perfil
+                <p className="text-center text-lg mt-10 text-gray-800">
+                    inicia sesion para ver tu perfil!
                 </p>
-                <Link href={routes.login}>
-                    Home
-                </Link>
+                <Link className="bg-violet-600 text-white flex justify-center
+                rounded-xl mt-5 h-7 w-20 ml-20" href={routes.login}>ir al login</Link>
             </div>
         );
     }
