@@ -2,12 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import { useAuthContext } from "../../../context/authContex";
-import { Order} from "../../../Types/index";
+import { Order} from "../../../types/index";
 import { toast } from "react-toastify";
-import { getUserOrders } from "../../../Components/api/Auth/fetchOrders";
+import { getUserOrders } from "../../../components/api/auth/fetchOrders";
 import { FaBoxOpen } from "react-icons/fa";
 import Image from "next/image";
-import AOSInitializer from "@/Components/Models/AOSInitializer";
+import AOSInitializer from "@/components/models/AOSInitializer";
 import "aos/dist/aos.css";
 
 export default function Orders() {

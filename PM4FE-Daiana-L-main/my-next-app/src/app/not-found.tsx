@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import Image from "next/image";
 import notFound from "../../public/assets/img/notFound.png";
 import Link from "next/link";
-import { routes } from "../Routes/index";
+import { routes } from "../routes/index";
 
 export const NotFound = () => {
     return (

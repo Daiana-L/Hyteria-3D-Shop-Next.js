@@ -2,13 +2,13 @@
 
 import React, { useState} from "react";
 import { useRouter } from "next/navigation";
-import { registerUser } from "../../../Components/api/Auth/fetchAuth";
+import { registerUser } from "../../../components/api/auth/fetchAuth";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { toast } from "react-toastify";
-import AOSInitializer from "@/Components/Models/AOSInitializer";
+import AOSInitializer from "@/components/models/AOSInitializer";
 import "aos/dist/aos.css";
 
 const schema = yup.object().shape({

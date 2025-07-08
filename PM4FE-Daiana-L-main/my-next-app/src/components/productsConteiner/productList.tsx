@@ -1,4 +1,4 @@
-import { Product } from "../../Types/index";
+import { Product } from "../../types/index";
 import ProductCard from "./ProductCard";
 
 interface Props {

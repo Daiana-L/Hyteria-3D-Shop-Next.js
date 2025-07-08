@@ -5,7 +5,7 @@ import logo from "../../../../public/assets/img/hyesteria-logo.png";
 import Link from "next/link";
 import { IoCartOutline, IoSearchOutline } from "react-icons/io5";
 import { PiUser } from "react-icons/pi";
-import { routes } from "../../../Routes/index";
+import { routes } from "../../../routes/index";
 import { useState } from "react";
 import {
     IoPersonOutline,
