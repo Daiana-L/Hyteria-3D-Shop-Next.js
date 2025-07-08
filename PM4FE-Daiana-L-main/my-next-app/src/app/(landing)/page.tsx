@@ -12,7 +12,7 @@ export default function Page() {
                 <div className="lg:container lg:mx-auto">
                     <div className="grid grid-cols-1 gap-8 items-center lg:grid-cols-2">
                         <div
-                            className="flex gap-4 xs:gap-2 flex-col bg-muted rounded-md aspect-square relative"
+                            className="flex gap-4 xs:gap-2 flex-col bg-muted rounded-md"
                             data-aos="fade-left"
                             data-aos-delay="600"
                         >
