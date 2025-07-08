@@ -1,27 +1,32 @@
 import { Check } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import Escena3D from "../models/Escena3D";
+import { Badge } from "../UI/badge";
+import Escena3D from "../models/escena3D";
 
 export const Feature1 = () => (
     <div className="mt-6">
         <div>
-            <div className="grid border rounded-lg container py-6 grid-cols-1 gap-20 items-center lg:grid-cols-2">
-                <div className="flex gap-10 flex-col ml-16">
+            <div className="xs:p-4  grid border rounded-lg lg:container lg:py-6 xs:py-5 lg:gap-10 items-center  lg:grid-cols-2  xs:grid-cols-1">
+                <div className="flex lg:gap-10 xs:gap-3 flex-col lg:ml-16 xs:ml-3">
                     <div className="flex flex-col">
                         <div>
-                            <Badge className="mb-2 bg-sky-500 text-white" variant="outline">Hysteria_3D</Badge>
+                            <Badge
+                                className="mb-2 bg-sky-500 text-white"
+                                variant="outline"
+                            >
+                                Hysteria_3D
+                            </Badge>
                         </div>
-                        <div className="flex gap-2 flex-col">
-                            <h2 className="text-3xl lg:text-5xl tracking-tighter max-w-xl text-left font-regular text-indigo-600">
+                        <div className="flex gap-2 flex-col ">
+                            <h2 className="text-3xl lg:text-5xl xs:text-1xl tracking-tighter max-w-xl text-left font-regular text-indigo-600">
                                 ¡Algo nuevo está llegando!
                             </h2>
-                            <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-left">
+                            <p className="lg:text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-left">
                                 Un pequeño emprendimiento, con grandes ideas
                                 impresas en 3D.
                             </p>
                         </div>
                     </div>
-                    <div className="grid lg:pl-6 grid-cols-1 sm:grid-cols-3 items-start lg:grid-cols-1 gap-6">
+                    <div className="grid lg:pl-6 grid-cols-1 items-start lg:grid-cols-1 lg:gap-6 xs:gap-3 ">
                         <div className="flex flex-row gap-6 items-start">
                             <Check className="w-4 h-4 mt-2 text-primary text-sky-500" />
                             <div className="flex flex-col gap-1">
@@ -51,7 +56,9 @@ export const Feature1 = () => (
                         </div>
                     </div>
                 </div>
-                <Escena3D />
+                <div className="hidden lg:block">
+                    <Escena3D />
+                </div>
             </div>
         </div>
     </div>

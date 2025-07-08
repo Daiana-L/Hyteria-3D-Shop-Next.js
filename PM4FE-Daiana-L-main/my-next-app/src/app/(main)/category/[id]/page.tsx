@@ -1,12 +1,13 @@
-import { fetchProductsByCategoryId } from "@/components/api/fetchProducts";
-import { Product } from "@/types";
-import ProductCard from "../../../../components/productsConteiner/productCard";
+import { fetchProductsByCategoryId } from "../../../../components/api/fetchProducts";
+import { Product } from "../../../../types/index";
+import ProductCard from "../../../../components/productsConteiner/ProductCard";
 
 type Props = {
     params: { id: string };
 };
 
-export default async function CategoryPage({ params }: Props) {
+export default async function CategoryPage(props: Promise<Props>) {
+    const { params } = await props;
     const categoryId = Number(params.id);
     const products: Product[] = await fetchProductsByCategoryId(categoryId);
 
@@ -16,12 +17,12 @@ export default async function CategoryPage({ params }: Props) {
             : "Categoría desconocida";
 
     return (
-        <div className="px-4 py-6">
-            <h2 className="text-2xl font-bold text-black mb-10 mt-4">
+        <div className="lg:px-4 lg:py-6">
+            <h2 className="lg:text-2xl xs:text-xl font-bold text-gray-900 6 xs:mt-6">
                 Productos en la categoría / {categoryName}
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid xs:grid-cols-2 lg:grid-cols-3 lg:gap-6 xs:gap-1">
                 {products.length === 0 && (
                     <p>No hay productos en esta categoría.</p>
                 )}

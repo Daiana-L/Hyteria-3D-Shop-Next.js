@@ -1,10 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import AOS from "aos";
+import AOSInitializer from "../../../components/models/AOSInitializer";
 import "aos/dist/aos.css";
-
-import ProductList from "../../../components/productsConteiner/productList";
+import ProductList from "../../../components/productsConteiner/ProductList";
 import { Feature1 } from "../../../components/ui/Homelanding";
 import { Product } from "../../../types/index";
 import { fetchAllProducts } from "../../../components/api/fetchProducts";
@@ -26,13 +25,7 @@ export default function HomePage() {
                 setLoading(false);
             });
     }, []);
-    useEffect(() => {
-        AOS.init({
-            duration: 600,
-            once: true,
-        });
-    }, []);
-
+    <AOSInitializer />
     return (
         <div>
             <div data-aos="fade-down">
@@ -43,10 +36,10 @@ export default function HomePage() {
                 <CategoriesHome />
             </div>
 
-            <div className="px-4">
+            <div className="lg:px-4">
                 <h2
                     data-aos="fade-right"
-                    className="text-2xl font-bold text-black mt-10"
+                    className="lg:text-2xl  xs:text-lg font-bold text-black lg:mt-10 xs:mt-3 xs:mb-5 xs:p-3"
                 >
                     Productos disponibles
                 </h2>

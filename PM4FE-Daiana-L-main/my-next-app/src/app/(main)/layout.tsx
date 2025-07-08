@@ -1,7 +1,7 @@
 
 
-import Navbar from "@/components/ui/navbar/Navbar";
-import Footer from "@/components/ui/footer/Footer";
+import Navbar from "@/Components/UI/Navbar/Navbar";
+import Footer from "@/Components/UI/Footer/Footer";
 import "../../styles/globals.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -22,9 +22,9 @@ export default function MainLayout({
     return (
         <AuthProvider>
             <CartProvider>
-                    <div className="flex flex-col bg-gray-100 text-black min-h-screen">
+                    <div className="flex flex-col bg-gray-100 text-black min-h-screen xs:w-full overflow-x-hidden">
                 <Navbar />
-                <main className="mt-32 mb-16 flex-grow max-w-5xl mx-auto px-6">
+                <main className="mt-32 lg:mb-16 xs:mb-6 flex-grow lg:max-w-5xl xs:max-w-xl mx-auto lg:px-6 xs:px-2">
                     {children}
                     <ToastContainer position="top-center" autoClose={3000} />
                 </main>

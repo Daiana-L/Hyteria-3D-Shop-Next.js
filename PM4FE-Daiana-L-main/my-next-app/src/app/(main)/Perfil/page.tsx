@@ -3,23 +3,14 @@
 import React, { useState, useEffect } from "react";
 import { useAuthContext } from "../../../context/authContex";
 import Image from "next/image";
-import AOS from "aos";
+import AOSInitializer from "@/Components/Models/AOSInitializer";
 import "aos/dist/aos.css";
 
 export default function Perfil() {
-
-        useEffect(() => {
-                AOS.init({
-                    duration: 300,
-                    once: true,
-                    easing: "ease-out",
-                });
-            }, []);
-            
     const { user } = useAuthContext();
     const [isEditing, setIsEditing] = useState(false);
     const [address, setAddress] = useState("");
-
+    <AOSInitializer />
     useEffect(() => {
         if (user?.address) {
             setAddress(user.address);
@@ -42,10 +33,10 @@ export default function Perfil() {
     
 
     return (
-        <section className="flex justify-center items-center mt-20 bg-gray-100" data-aos="fade-down">
-            <div className="bg-white p-8 rounded-3xl shadow-xl relative w-[160vh]">
+        <section className="flex justify-center items-center xs:mt-20 lg:mt-28 bg-gray-100" data-aos="fade-down">
+            <div className="bg-white p-8 rounded-3xl shadow-xl relative lg:w-[160vh]">
                 <div className="absolute -top-16 left-1/2 transform -translate-x-1/2">
-                    <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md bg-indigo-100">
+                    <div className="lg:w-32 lg:h-32 xs:w-24 xs:h-24 rounded-full overflow-hidden border-4 border-white shadow-md bg-indigo-100">
                         <Image
                             src="/assets/img/pet2.png"
                             alt="Avatar de usuario"
@@ -56,15 +47,15 @@ export default function Perfil() {
                     </div>
                 </div>
 
-                <div className="mt-10 text-center">
+                <div className="lg:mt-10 text-center">
                     <h1 className="text-3xl font-bold text-indigo-600 mb-2">
                         Mi perfil
                     </h1>
-                    <p className="text-gray-500 mb-6">
+                    <p className="text-gray-500 lg:mb-6">
                         Bienvenido/a a tu cuenta de Hysteria_3D
                     </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-6 text-gray-700">
                     <div>
                         <label className="block text-sm font-medium text-gray-500">
                             Nombre
@@ -102,7 +93,7 @@ export default function Perfil() {
                                         ? handleSave()
                                         : setIsEditing(true)
                                 }
-                                className="px-4 py-2 text-sm font-medium text-white bg-indigo-500 rounded-md hover:bg-indigo-600 transition"
+                                className="px-4 py-2 xs:w-20 text-sm font-medium text-white bg-indigo-500 rounded-md hover:bg-indigo-600 transition"
                             >
                                 {isEditing ? "Guardar" : "Editar"}
                             </button>
