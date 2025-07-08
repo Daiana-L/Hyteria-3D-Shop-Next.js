@@ -18,7 +18,7 @@ export default function RootLayout({
             <head>
                 <link rel="icon" href="/assets/img/pet.png" />
             </head>
-            <body className="overflow-x-hidden">
+            <body>
                 <AOSInitializer />
                 {children}
             </body>
