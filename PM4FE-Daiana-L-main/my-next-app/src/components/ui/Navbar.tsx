@@ -25,7 +25,7 @@ export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { itemsCount } = useCartContext();
     return (
-        <nav className="fixed top-0  w-full bg-violet-600/95 backdrop-blur-md shadow z-50">
+        <nav className="fixed top-0  w-full bg-violet-700/95 backdrop-blur-md shadow z-50">
             <div className="flex items-center justify-between px-5 py-3">
                 <Link href={routes.home} className="flex items-center">
                     <Image src={logo} alt="logo" width={140} priority />
@@ -51,7 +51,7 @@ export default function Navbar() {
                                 Categorías
                             </button>
                             {isDropdownOpen && (
-                                <div className="absolute top-full  mt-2 bg-violet-600 text-white rounded-lg shadow-lg w-40 z-50">
+                                <div className="absolute top-full  mt-2 bg-violet-700 text-white rounded-lg shadow-lg w-40 z-50">
                                     <ul className="space-y-1">
                                         {[
                                             "Decoración",
@@ -131,7 +131,7 @@ export default function Navbar() {
                 <div
                     className="fixed lg:w-[480px] top-0 right-0 h-screen xs:w-[280px]
                     text-white xs:p-5 transition-all duration-300
-                    bg-violet-600 shadow-2xl transform "
+                    bg-violet-700 shadow-2xl transform "
                 >
                     <button
                         onClick={() => setIsMenuOpen(false)}
@@ -155,7 +155,7 @@ export default function Navbar() {
                                 </button>
 
                                 {isDropdownOpen && (
-                                    <div className="absolute top-full mt-2 bg-violet-600 text-white rounded-lg shadow-xl p-1 w-40 z-50">
+                                    <div className="absolute top-full mt-2 bg-violet-700 text-white rounded-lg shadow-xl p-1 w-40 z-50">
                                         <ul className="space-y-1">
                                             {[
                                                 "Decoración",
