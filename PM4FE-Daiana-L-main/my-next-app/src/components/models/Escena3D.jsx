@@ -5,8 +5,8 @@ import Fantasmita from "./Fantasmita";
 
 export default function Escena3D() {
     return (
-        <div className="flex items-center justify-center w-[55vh]  bg-indigo-600/95 rounded-xl backdrop-blur-md ">
-            <div className="w-[400px] h-[440px]">
+        <div className="flex items-center justify-center lg:w-[55vh] xs:w-[35vh] xs:h-[40vh] lg:bg-indigo-600/95 xs:hidden-bg-indigo-600/95 lg:rounded-xl xs:rounded-lg backdrop-blur-md xs:ml-4 ">
+            <div className="lg:w-[400px] lg:h-[440px]">
                 <Canvas camera={{ position: [0, 2, 5], fov: 105}}>
                     <ambientLight intensity={25.2} />
                     <Environment preset="sunset" />

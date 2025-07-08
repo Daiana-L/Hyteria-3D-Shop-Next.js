@@ -1,22 +1,11 @@
-"use client";
 
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Image from "next/image";
 export default function Ayuda() {
-    useEffect(() => {
-                AOS.init({
-                    duration: 300,
-                    once: true,
-                    easing: "ease-out",
-                });
-            }, []);
     return (
-        <section className="mt-36 px-4 max-w-6xl mx-auto" data-aos="fade-down">
+        <section className="lg:mt-36 xs:mt-28 lg:px-4" data-aos="fade-down">
             <div className="relative bg-white p-6 rounded-3xl shadow-lg text-center">
-                <div className="absolute -top-28 left-1/2 transform -translate-x-1/2">
-                    <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md bg-indigo-100">
+                <div className="absolute lg:-top-28 xs:-top-20 left-1/2 transform -translate-x-1/2">
+                    <div className="lg:w-32 lg:h-32 xs:w-24 xs:h-24 rounded-full overflow-hidden border-4 border-white shadow-md bg-indigo-100">
                         <Image
                             src="/assets/img/pet3.png"
                             alt="Avatar de usuario"
@@ -27,15 +16,15 @@ export default function Ayuda() {
                     </div>
                 </div>
 
-                <h1 className="text-3xl font-bold text-indigo-600 mb-4">
+                <h1 className="lg:text-3xl xs:text-2xl font-bold text-indigo-600 lg:mb-4">
                     Ayuda y Soporte
                 </h1>
 
-                <p className="text-gray-700 text-lg mb-4">
+                <p className="text-gray-700 lg:text-lg mb-4">
                     ¿Tenés dudas sobre tu pedido, un problema técnico o querés
                     hacer una consulta personalizada?
                 </p>
-                <p className="text-gray-700 text-lg mb-8">
+                <p className="text-gray-700 lg:text-lg lg:mb-8 xs:mb-4">
                     Estamos para ayudarte con cualquier tema relacionado a
                     productos, envíos o personalizaciones.
                 </p>

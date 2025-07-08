@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { User } from "@/types";
+import { User } from "@/Types";
 
 type SaveUserPayload = {
     user: User;

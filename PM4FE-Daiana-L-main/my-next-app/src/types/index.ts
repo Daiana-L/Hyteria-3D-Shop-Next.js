@@ -50,10 +50,7 @@ export type CategoryParams = {
     id: string;
 };
 
-export type Params = {
-    slug: string[];
-};
-
-export type SearchParams = {
+export type Params = Promise<{ slug: string }>;
+export type SearchParams = Promise<{
     [key: string]: string | string[] | undefined;
-};
+}>;

@@ -1,28 +1,30 @@
 import { MoveRight, Home } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "@/Components/UI/button";
+import { Badge } from "@/Components/UI/badge";
 import Image from "next/image";
 import hysteriaImgs from "../../../public/assets/img/landing1.jpg";
 import Link from "next/link";
-import { routes } from "../../routes/index";
+import { routes } from "../../Routes/index";
 export default function Page() {
     return (
-        <div className="w-full py-10 lg:py-20">
+        <div>
+            <div className="bg-indigo-600 p-4 lg:p-0 overflow-x-hidden overflow-y-hidden"></div>
+            <div className="py-10 lg:py-20 xs:p-6 xs:py-6">
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 gap-8 items-center lg:grid-cols-2">
                     <div
-                        className="flex gap-4 flex-col"
+                        className="flex gap-4 xs:gap-2 flex-col"
                         data-aos="fade-left"
                         data-aos-delay="600"
                     >
-                        <div>
+                        <div className="lg:text-2xl xs:text-base">
                             <Badge variant="outline">Bienvenidos!</Badge>
                         </div>
-                        <div className="flex gap-4 flex-col">
-                            <h1 className="text-5xl md:text-7xl max-w-lg tracking-tighter text-left font-regular text-gray-900">
+                        <div className="flex gap-4 xs:gap-1 flex-col">
+                            <h1 className="text-5xl xs:text-4xl md:text-7xl max-w-lg tracking-tighter text-left font-regular text-gray-900">
                                 Hysteria_3D esta en marcha!
                             </h1>
-                            <p className="text-xl leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
+                            <p className="lg:text-xl xs:text-base leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
                                 En Hysteria_3D somos un pequeño emprendimiento
                                 que te ofrece compras online fáciles y rápidas.
                                 Olvidate de complicaciones: acá podés elegir y
@@ -30,11 +32,11 @@ export default function Page() {
                                 desde donde estés!
                             </p>
                         </div>
-                        <div className="flex flex-row gap-4">
+                        <div className="flex flex-row gap-4 xs:mt-4">
                             <Link href={routes.home} passHref>
                                 <Button
                                     size="lg"
-                                    className="gap-4 bg-indigo-500 text-white hover:bg-sky-500 hover:text-white"
+                                    className="gap-4 bg-indigo-500 text-white hover:bg-sky-500 hover:text-white rounded-xl p-2 px-4"
                                     variant="outline"
                                 >
                                     <Home className="w-4 h-4" /> Home
@@ -44,7 +46,7 @@ export default function Page() {
                             <Link href={routes.login} passHref>
                                 <Button
                                     size="lg"
-                                    className="gap-4 bg-indigo-500 text-white hover:bg-sky-500 hover:text-white"
+                                    className="gap-4 bg-indigo-500 text-white hover:bg-sky-500 hover:text-white rounded-xl p-2"
                                     variant="outline"
                                 >
                                     Iniciar sesión{" "}
@@ -66,6 +68,8 @@ export default function Page() {
                     </div>
                 </div>
             </div>
+        </div>
+        <div className="bg-indigo-600 p-4 lg:p-0"></div>
         </div>
     );
 }

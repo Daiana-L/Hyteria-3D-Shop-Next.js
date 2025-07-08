@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect } from "react";
-import { Product } from "../types/index";
+import { Product } from "../Types/index";
 
 type CartItem = Partial<Product> & { quantity: number };
 
@@ -11,7 +11,7 @@ type CartContextType = {
     itemsCount: number; 
     addToCart: (product: Partial<Product>) => void;
     removeFromCart: (productId: number) => void;
-    clearCart: () => void; 
+    clearCart: () => void;                                                        
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);

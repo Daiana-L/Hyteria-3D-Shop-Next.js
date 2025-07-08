@@ -3,12 +3,12 @@ import logo from "../../../../public/assets/img/hyesteria-logo.png";
 import Image from "next/image";
 const Footer = () => {
     return (
-        <footer className="w-full bg-indigo-600/95 backdrop-blur-md text-white py-8">
-            <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-                <div className="flex items-center gap-2">
-                    <Image src={logo} alt="logo" width={150} />
+        <footer className="w-full bg-indigo-600/95 backdrop-blur-md text-white lg:py-8 ">
+            <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between  items-center lg:gap-6 xs:gap-2">
+                <div className="flex lg:w-[150] xs:w-[100] xs:mt-3">
+                    <Image src={logo} width={100} alt="logo" />
                 </div>
-                <div className="flex flex-col md:flex-row gap-4 text-sm">
+                <div className="flex justify-center lg:flex-row gap-4 text-sm lg:ml-20 xs:mb-2">
                     <a href="#" className="hover:underline">
                         Inicio
                     </a>
@@ -33,7 +33,7 @@ const Footer = () => {
                     </a>
                 </div>
             </div>
-            <div className="mt-6 text-center text-sm text-gray-400">
+            <div className="mt-6 mb-3 flex justify-center text-center text-sm text-gray-400">
                 © 2025 Hysteria_3D. Todos los derechos reservados.
             </div>
         </footer>

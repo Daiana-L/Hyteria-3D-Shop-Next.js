@@ -5,13 +5,16 @@ import logo from "../../../../public/assets/img/hyesteria-logo.png";
 import Link from "next/link";
 import { IoCartOutline, IoSearchOutline } from "react-icons/io5";
 import { PiUser } from "react-icons/pi";
-import { routes } from "../../../routes/index";
+import { routes } from "../../../Routes/index";
 import { useState } from "react";
 import {
     IoPersonOutline,
     IoTicketOutline,
     IoAlertCircleOutline,
     IoClose,
+    IoCallOutline,
+    IoMenuOutline,
+    IoGridOutline,
 } from "react-icons/io5";
 import { useAuthContext } from "../../../context/authContex";
 import { IoLogOutOutline } from "react-icons/io5";
@@ -22,101 +25,73 @@ export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { itemsCount } = useCartContext();
     return (
-        <nav className="fixed top-0 left-0 w-full bg-indigo-600/95 backdrop-blur-md shadow z-50">
-            <div className=" flex items-center justify-between">
-                <div className="flex items-center gap-2 ml-10">
-                    <Image src={logo} alt="logo" width={150} />
+        <nav className="fixed top-0  w-full bg-indigo-600/95 backdrop-blur-md shadow z-50">
+            <div className="flex items-center justify-between px-5 py-3">
+                <Link href={routes.home} className="flex items-center">
+                    <Image src={logo} alt="logo" width={140} priority />
+                </Link>
+                <div className="hidden lg:flex flex-1 justify-center">
+                    <ul className="flex gap-10 text-white font-medium items-center">
+                        <li className="p-2 rounded-2xl hover:bg-sky-500 transition">
+                            <Link
+                                href={routes.home}
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Home
+                            </Link>
+                        </li>
+
+                        <li className="relative flex flex-col items-center">
+                            <button
+                                onClick={() =>
+                                    setIsDropdownOpen(!isDropdownOpen)
+                                }
+                                className="p-2 rounded-2xl transition-all hover:bg-sky-500"
+                            >
+                                Categorías
+                            </button>
+                            {isDropdownOpen && (
+                                <div className="absolute top-full  mt-2 bg-indigo-600 text-white rounded-lg shadow-lg w-40 z-50">
+                                    <ul className="space-y-1">
+                                        {[
+                                            "Decoración",
+                                            "Llaveros",
+                                            "Macetas",
+                                            "Accesorios",
+                                            "Arte y diseño",
+                                            "Figuras y coleccionables",
+                                        ].map((cat, idx) => (
+                                            <li key={cat}>
+                                                <Link
+                                                    href={`/category/${
+                                                        idx + 1
+                                                    }`}
+                                                    className="block p-2 text-center hover:bg-sky-500 rounded"
+                                                    onClick={() =>
+                                                        setIsDropdownOpen(false)
+                                                    }
+                                                >
+                                                    {cat}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </li>
+
+                        <li className="p-2 rounded-2xl hover:bg-sky-500 transition">
+                            <Link
+                                onClick={() => setIsMenuOpen(false)}
+                                href={routes.contacto}
+                            >
+                                Contacto
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
-                <ul className="flex gap-6 text-white font-medium ml-16">
-                    <li className="m-4 p-2 rounded-2xl transition-all hover:bg-sky-500">
-                        <Link
-                            href={routes.home}
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Home
-                        </Link>
-                    </li>
-                    <button
-                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                        className="m-4 p-2 rounded-2xl transition-all hover:bg-sky-500"
-                    >
-                        Categorias
-                    </button>
 
-                    {isDropdownOpen && (
-                        <div className="absolute flex flex-col bg-indigo-600 backdrop-blur-md text-white rounded-lg shadow-lg mt-20 ml-20 p-2 w-48 z-10 ">
-                            <ul className="space-y-1">
-                                <li>
-                                    <Link
-                                        className="block p-2 text-center hover:bg-sky-500 rounded"
-                                        href="/category/1"
-                                        onClick={() => setIsDropdownOpen(false)}
-                                    >
-                                        Decoración
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        className="block p-2 text-center hover:bg-sky-500 rounded"
-                                        href="/category/2"
-                                        onClick={() => setIsDropdownOpen(false)}
-                                    >
-                                        Llaveros
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        className="block p-2 text-center hover:bg-sky-500 rounded"
-                                        href="/category/3"
-                                        onClick={() => setIsDropdownOpen(false)}
-                                    >
-                                        Macetas
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        className="block p-2 text-center hover:bg-sky-500 rounded"
-                                        href="/category/4"
-                                        onClick={() => setIsDropdownOpen(false)}
-                                    >
-                                        Accesorios
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        className="block p-2 text-center hover:bg-sky-500 rounded"
-                                        href="/category/5"
-                                        onClick={() => setIsDropdownOpen(false)}
-                                    >
-                                        Arte y diseño
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        className="block p-2 text-center hover:bg-sky-500 rounded"
-                                        href="/category/6"
-                                        onClick={() => setIsDropdownOpen(false)}
-                                    >
-                                        Figuras y coleccionables
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    )}
-
-                    <li className="m-4 p-2 rounded-2xl transition-all hover:bg-sky-500">
-                        <Link
-                            onClick={() => setIsMenuOpen(false)}
-                            href={routes.contacto}
-                        >
-                            Contacto
-                        </Link>
-                    </li>
-                </ul>
-                <div className="flex items-center text-white">
-                    <a className="mx-6">
-                        <IoSearchOutline className="w-10 h-6" />
-                    </a>
+                <div className="flex items-center text-white lg:gap-5 xs:gap-2">
                     <Link href={routes.cart} className="mx-2 text-white">
                         <div className="relative">
                             {itemsCount > 0 && (
@@ -124,7 +99,7 @@ export default function Navbar() {
                                     {itemsCount}
                                 </span>
                             )}
-                            <IoCartOutline className="w-6 h-10" />
+                            <IoCartOutline size={30} />
                         </div>
                     </Link>
 
@@ -134,73 +109,125 @@ export default function Navbar() {
                             className="mx-4 text-white hover:text-sky-300 transition"
                             title="Cerrar sesión"
                         >
-                            <IoLogOutOutline className="w-6 h-10" />
+                            <IoLogOutOutline size={30} />
                         </button>
                     ) : (
                         <Link href={routes.login} className="mx-4 text-white">
                             <div className="relative">
-                                <PiUser className="w-6 h-10" />
+                                <PiUser size={30} />
                             </div>
                         </Link>
                     )}
 
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="m-3 p-2 rounded-2xl transition-all hover:bg-sky-500 text-white"
+                        className="block"
                     >
-                        Menu
+                        <IoMenuOutline size={36} />
                     </button>
-
-                    {isMenuOpen && (
-                        <div className="fixed p-5 right-0 top-0 w-[500px] h-screen bg-indigo-600 backdrop-blur-md z-20 shadow-2xl transform transition-all duration-300">
-                            <button
-                                onClick={() => setIsMenuOpen(false)}
-                                className="absolute top-4 right-4 text-white hover:text-sky-300 transition"
-                            >
-                                <IoClose size={30} />
-                            </button>
-                            <ul className="text-white space-y-10 ml-4 text-lg mt-14">
-                                <li>
-                                        <Link
-                                            className="flex items-center p-2 hover:bg-sky-500 rounded-xl transition-all"
-                                            href={routes.perfil}
-                                        >
-                                            <IoPersonOutline
-                                                className="mr-3"
-                                                size={30}
-                                            />{" "}
-                                            Perfil
-                                        </Link>
-                                </li>
-                                <li>
-                                        <Link
-                                            className="flex items-center p-2 hover:bg-sky-500 rounded-xl transition-all"
-                                            href={routes.orders}
-                                        >
-                                            <IoTicketOutline
-                                                className="mr-3"
-                                                size={30}
-                                            />{" "}
-                                            Mis pedidos
-                                        </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        className="flex items-center p-2 hover:bg-sky-500 rounded-xl transition-all"
-                                        href={routes.ayuda}
-                                    >
-                                        <IoAlertCircleOutline
-                                            className="mr-3"
-                                            size={30}
-                                        />{" "}
-                                        Ayuda
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    )}
                 </div>
             </div>
+            {isMenuOpen && (
+                <div
+                    className="fixed lg:w-[480px] top-0 right-0 h-screen xs:w-[280px]
+                    text-white xs:p-5 transition-all duration-300
+                    bg-indigo-600 shadow-2xl transform "
+                >
+                    <button
+                        onClick={() => setIsMenuOpen(false)}
+                        className="absolute top-4 right-4 text-white hover:text-sky-300 transition "
+                    >
+                        <IoClose size={30} />
+                    </button>
+                    <ul className="mt-12 space-y-6 text-lg ">
+                        <li className="flex items-center gap-2 hover:bg-sky-500 p-2 rounded-xl text-white ">
+                            <IoSearchOutline size={24} /> Buscar
+                        </li>
+                        <ul className="relative lg:hidden">
+                            <li className="flex items-center gap-2 hover:bg-sky-500 p-2 rounded-xl text-white">
+                                <button
+                                    className="flex items-center gap-2"
+                                    onClick={() =>
+                                        setIsDropdownOpen(!isDropdownOpen)
+                                    }
+                                >
+                                    <IoGridOutline size={24} /> Categorías
+                                </button>
+
+                                {isDropdownOpen && (
+                                    <div className="absolute top-full mt-2 bg-indigo-600 text-white rounded-lg shadow-xl p-1 w-40 z-50">
+                                        <ul className="space-y-1">
+                                            {[
+                                                "Decoración",
+                                                "Llaveros",
+                                                "Macetas",
+                                                "Accesorios",
+                                                "Arte y diseño",
+                                                "Figuras y coleccionables",
+                                            ].map((cat, idx) => (
+                                                <li key={cat}>
+                                                    <Link
+                                                        href={`/category/${
+                                                            idx + 1
+                                                        }`}
+                                                        className="block px-4 py-2 text-sm text-center hover:bg-sky-500 rounded"
+                                                        onClick={() => {
+                                                            setIsDropdownOpen(
+                                                                false
+                                                            );
+                                                            setIsMenuOpen(
+                                                                false
+                                                            );
+                                                        }}
+                                                    >
+                                                        {cat}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                            </li>
+                        </ul>
+                        <li>
+                            <Link
+                                href={routes.perfil}
+                                className="flex items-center gap-2 hover:bg-sky-500 p-2 rounded-xl"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                <IoPersonOutline size={24} /> Perfil
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                href={routes.orders}
+                                className="flex items-center gap-2 hover:bg-sky-500 p-2 rounded-xl"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                <IoTicketOutline size={24} /> Mis pedidos
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                href={routes.contacto}
+                                className="block p-2 hover:bg-sky-500 rounded-xl xs:flex xs:items-center xs:gap-2 lg:hidden"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                <IoCallOutline size={24} /> Contacto
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                href={routes.ayuda}
+                                className="flex items-center gap-2 hover:bg-sky-500 p-2 rounded-xl"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                <IoAlertCircleOutline size={24} /> Ayuda
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+            )}
         </nav>
     );
 }

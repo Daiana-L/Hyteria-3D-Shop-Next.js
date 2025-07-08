@@ -1,24 +1,22 @@
 import Image from "next/image";
+import { Params } from "@/Types";
+import { SearchParams } from "@/Types";
 import Head from "next/head";
-import AddToCartButton from "@/components/ui/CartAddBtn";
-import { Params } from "@/types";
-
-export default async function ProductDetail({ params }: { params: Params }) {
-    const [id] = params.slug;
-
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/products/${id}`,
-        {
-            cache: "no-store",
-        }
-    );
-
+import AddToCartButton from "@/Components/UI/CartAddBtn";
+export default async function ProductDetail(props: {
+    params: Params;
+    searchParams: SearchParams;
+}) {
+    const params = await props.params;
+    const [id = undefined, ...slug] = params.slug;
+    const res = await fetch(`http://localhost:3003/products/${id}`, {
+        cache: "no-store",
+    });
+    console.log(slug);
     if (!res.ok) {
         return <p>Producto no encontrado</p>;
     }
-
     const product = await res.json();
-
     return (
         <>
             <Head>
@@ -26,8 +24,8 @@ export default async function ProductDetail({ params }: { params: Params }) {
                 <meta name="description" content={product.description} />
             </Head>
 
-            <section className="text-gray-600">
-                <div className="py-16">
+            <section className="text-gray-600 xs:p-2">
+                <div className="lg:py-16 xs:py-6">
                     <div className="lg:w-4/4 mx-auto flex flex-wrap">
                         {product.image && (
                             <Image
@@ -38,12 +36,11 @@ export default async function ProductDetail({ params }: { params: Params }) {
                                 height={800}
                             />
                         )}
-
                         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                             <h2 className="text-sm title-font text-gray-500 tracking-widest">
                                 Hysteria_3D
                             </h2>
-                            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
+                            <h1 className="text-gray-900 xs:text-2xl lg:text-3xl title-font font-medium mb-1">
                                 {product.name}
                             </h1>
                             <div className="flex mb-4">
@@ -72,7 +69,7 @@ export default async function ProductDetail({ params }: { params: Params }) {
                                 {product.description}
                             </p>
 
-                            <div className="flex items-center border-b-2 border-gray-100 pb-5 mb-5">
+                            <div className="flex items-center border-b-2 border-gray-100 lg:pb-5 mb-5">
                                 <div className="flex items-center mr-6">
                                     <span className="mr-3">Color</span>
                                     <div className="flex gap-1">
