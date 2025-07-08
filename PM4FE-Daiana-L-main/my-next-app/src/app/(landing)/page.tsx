@@ -8,7 +8,7 @@ import { routes } from "../../routes/index";
 export default function Page() {
     return (
         <div>
-            <div className="bg-violet-700 p-4 lg:p-0 overflow-x-hidden overflow-y-hidden"></div>
+            <div className="lg:bg-indigo-600/95 xs:bg-violet-600/95 p-4 lg:p-0 overflow-x-hidden overflow-y-hidden"></div>
             <div className="py-10 lg:py-20 xs:p-6 xs:py-6">
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 gap-8 items-center lg:grid-cols-2">
@@ -36,7 +36,7 @@ export default function Page() {
                             <Link href={routes.home} passHref>
                                 <Button
                                     size="lg"
-                                    className="gap-4 bg-violet-700 text-white hover:bg-sky-500 hover:text-white rounded-xl p-2 px-4"
+                                    className="gap-4 lg:bg-indigo-600/95 xs:bg-violet-600/95 text-white hover:bg-sky-500 hover:text-white rounded-xl p-2 px-4"
                                     variant="outline"
                                 >
                                     <Home className="w-4 h-4" /> Home
@@ -46,7 +46,7 @@ export default function Page() {
                             <Link href={routes.login} passHref>
                                 <Button
                                     size="lg"
-                                    className="gap-4 bg-violet-700 text-white hover:bg-sky-500 hover:text-white rounded-xl p-2"
+                                    className="gap-4 lg:bg-indigo-600/95 xs:bg-violet-600/95 text-white hover:bg-sky-500 hover:text-white rounded-xl p-2"
                                     variant="outline"
                                 >
                                     Iniciar sesión{" "}
@@ -69,7 +69,7 @@ export default function Page() {
                 </div>
             </div>
         </div>
-        <div className="bg-violet-700 p-4 lg:p-0"></div>
+        <div className="lg:bg-indigo-600/95 xs:bg-violet-600/95 p-4 lg:p-0"></div>
         </div>
     );
 }
