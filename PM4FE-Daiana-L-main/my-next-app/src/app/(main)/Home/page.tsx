@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import AOSInitializer from "@/Components/Models/AOSInitializer";
+import AOSInitializer from "../../../Components/Models/AOSInitializer";
 import "aos/dist/aos.css";
 import ProductList from "../../../Components/ProductCard/ProductList";
-import { Feature1 } from "@/Components/UI/Homelanding";
+import { Feature1 } from "../../../Components/UI/Homelanding";
 import { Product } from "../../../Types/index";
 import { fetchAllProducts } from "../../../Components/api/fetchProducts";
-import CategoriesHome from "@/Components/UI/categorysHome";
+import CategoriesHome from "../../../Components/UI/categorysHome";
 
 export default function HomePage() {
     const [products, setProducts] = useState<Product[]>([]);
