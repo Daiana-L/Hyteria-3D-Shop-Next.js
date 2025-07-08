@@ -1,7 +1,7 @@
 
 import "../styles/globals.css";
 import type { Metadata } from "next";
-import AOSInitializer from "../Components/Models/AOSInitializer";
+import AOSInitializer from "../components/models/AOSInitializer";
 
 export const metadata: Metadata = {
     title: "Hysteria_3D | Shop",
@@ -18,7 +18,7 @@ export default function RootLayout({
             <head>
                 <link rel="icon" href="/assets/img/pet.png" />
             </head>
-            <body className="overflow-x-hidden">
+            <body>
                 <AOSInitializer />
                 {children}
             </body>

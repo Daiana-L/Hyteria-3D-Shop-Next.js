@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { loginUser } from "../../../Components/api/Auth/fetchAuth";
+import { loginUser } from "../../../components/api/auth/fetchAuth";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -70,7 +70,7 @@ export default function LoginForm() {
 
     return (
         <div
-            className="relative bg-white lg:p-8 xs:p-0 rounded-2xl shadow-lg lg:w-[60vh] xs:w-[40vh] mt-20"
+            className="relative bg-white p-8 rounded-2xl shadow-lg w-[60vh] mt-12"
             data-aos="fade-down"
         >
             <Image
@@ -132,7 +132,7 @@ export default function LoginForm() {
 
             <div className="bg-white p-8 rounded-2xl w-full max-w-sm">
                 <div className="absolute -top-10 left-1/2 transform ml-20">
-                    <div className="lg:w-32 lg:h-32 xs:w-20 xs:h-20 rounded-full overflow-hidden border-4 border-white shadow-md bg-indigo-100">
+                    <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md bg-indigo-100">
                         <Image
                             src="/assets/img/pet9.png"
                             alt="Avatar de usuario"
@@ -142,10 +142,10 @@ export default function LoginForm() {
                         />
                     </div>
                 </div>
-                <h2 className="lg:text-2xl xs:text-xl font-bold text-center lg:mb-6 xs:mb-4">
+                <h2 className="text-2xl font-bold text-center mb-6">
                     Iniciar sesión
                 </h2>
-                <form onSubmit={handleSubmit(onSubmit)} className="lg:space-y-7 xs:space-y-3">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-7">
                     <div>
                         <label
                             htmlFor="email"
@@ -205,7 +205,7 @@ export default function LoginForm() {
                     </p>
                 )}
 
-                <p className="text-sm text-center text-gray-600 lg:mt-10 xs:mt-5">
+                <p className="text-sm text-center text-gray-600 mt-10">
                     ¿No tenés cuenta?{" "}
                     <a
                         href="/register"

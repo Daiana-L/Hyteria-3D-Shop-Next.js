@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import AOSInitializer from "../../../Components/Models/AOSInitializer";
+import AOS from "aos";
 import "aos/dist/aos.css";
-import ProductList from "../../../Components/ProductCard/ProductList";
-import { Feature1 } from "../../../Components/UI/Homelanding";
-import { Product } from "../../../Types/index";
-import { fetchAllProducts } from "../../../Components/api/fetchProducts";
-import CategoriesHome from "../../../Components/UI/categorysHome";
+
+import ProductList from "../../../components/productsConteiner/productList";
+import { Feature1 } from "../../../components/ui/Homelanding";
+import { Product } from "../../../types/index";
+import { fetchAllProducts } from "../../../components/api/fetchProducts";
+import CategoriesHome from "../../../components/ui/categorysHome";
 
 export default function HomePage() {
     const [products, setProducts] = useState<Product[]>([]);
@@ -25,7 +26,13 @@ export default function HomePage() {
                 setLoading(false);
             });
     }, []);
-    <AOSInitializer />
+    useEffect(() => {
+        AOS.init({
+            duration: 600,
+            once: true,
+        });
+    }, []);
+
     return (
         <div>
             <div data-aos="fade-down">
@@ -36,10 +43,10 @@ export default function HomePage() {
                 <CategoriesHome />
             </div>
 
-            <div className="lg:px-4">
+            <div className="px-4">
                 <h2
                     data-aos="fade-right"
-                    className="lg:text-2xl  xs:text-lg font-bold text-black lg:mt-10 xs:mt-3 xs:mb-5 xs:p-3"
+                    className="text-2xl font-bold text-black mt-10"
                 >
                     Productos disponibles
                 </h2>

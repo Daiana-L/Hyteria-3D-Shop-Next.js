@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useState} from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { registerUser } from "../../../Components/api/Auth/fetchAuth";
+import { registerUser } from "../../../components/api/auth/fetchAuth";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { toast } from "react-toastify";
-import AOSInitializer from "@/Components/Models/AOSInitializer";
+import AOS from "aos";
 import "aos/dist/aos.css";
 
 const schema = yup.object().shape({
@@ -30,7 +30,6 @@ type FormData = yup.InferType<typeof schema>;
 export default function RegisterForm() {
     const [registroExitoso, setRegistroExitoso] = useState(false);
     const [error, setError] = useState<string | null>(null);
-
 
     const router = useRouter();
 
@@ -59,12 +58,21 @@ export default function RegisterForm() {
             }
         }
     };
-    <AOSInitializer />
+    useEffect(() => {
+        AOS.init({
+            duration: 500,
+            once: true,
+            easing: "ease-out",
+        });
+    }, []);
     return (
-        <div className="relative bg-white lg:p-8 xs:p-0 rounded-2xl shadow-lg lg:w-[60vh] xs:w-[40vh] xs:mt-10">
-            <div className="bg-white p-8 rounded-2xl w-full max-w-sm">
-                <div className="absolute -top-10 left-1/2 transform ml-20">
-                    <div className="lg:w-32 lg:h-32 xs:w-20 xs:h-20 rounded-full overflow-hidden border-4 border-white shadow-md bg-indigo-100 mt-5">
+        <div
+            className="bg-white p-8 rounded-2xl shadow-lg w-[65vh] mt-8"
+            data-aos="fade-down"
+        >
+            <div className="relative bg-white p-4 rounded-2xl w-full">
+                <div className="absolute -top-16 left-1/2 transform ml-28">
+                    <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md bg-indigo-100">
                         <Image
                             src="/assets/img/pet12.png"
                             alt="Avatar de usuario"
@@ -74,10 +82,10 @@ export default function RegisterForm() {
                         />
                     </div>
                 </div>
-                <h2 className="lg:text-2xl xs:text-xl font-bold text-center lg:mb-5 xs:mb-4">
+                <h2 className="text-3xl font-bold text-center mb-8">
                     Registrarse
                 </h2>
-                <form onSubmit={handleSubmit(onSubmit)} className="lg:space-y-4 xs:space-y-3">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                     <div>
                         <label className="block text-sm text-gray-700">
                             Nombre
@@ -85,7 +93,7 @@ export default function RegisterForm() {
                         <input
                             type="text"
                             {...register("name")}
-                            className={`mt-1 w-full px-4 lg:py-2 xs:py-1 border rounded-lg focus:ring-2 focus:outline-none ${
+                            className={`mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:outline-none ${
                                 errors.name
                                     ? "border-red-500 focus:ring-red-500"
                                     : "border-gray-300 focus:ring-purple-500"
@@ -105,7 +113,7 @@ export default function RegisterForm() {
                         <input
                             type="text"
                             {...register("address")}
-                            className={`mt-1 w-full px-4 lg:py-2 xs:py-1 border rounded-lg focus:ring-2 focus:outline-none ${
+                            className={`mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:outline-none ${
                                 errors.address
                                     ? "border-red-500 focus:ring-red-500"
                                     : "border-gray-300 focus:ring-purple-500"
@@ -125,7 +133,7 @@ export default function RegisterForm() {
                         <input
                             type="tel"
                             {...register("phone")}
-                            className={`mt-1 w-full px-4 lg:py-2 xs:py-1 border rounded-lg focus:ring-2 focus:outline-none ${
+                            className={`mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:outline-none ${
                                 errors.phone
                                     ? "border-red-500 focus:ring-red-500"
                                     : "border-gray-300 focus:ring-purple-500"
@@ -145,7 +153,7 @@ export default function RegisterForm() {
                         <input
                             type="email"
                             {...register("email")}
-                            className={`mt-1 w-full px-4 lg:py-2 xs:py-1 border rounded-lg focus:ring-2 focus:outline-none${
+                            className={`mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:outline-none ${
                                 errors.email
                                     ? "border-red-500 focus:ring-red-500"
                                     : "border-gray-300 focus:ring-purple-500"
@@ -165,7 +173,7 @@ export default function RegisterForm() {
                         <input
                             type="password"
                             {...register("password")}
-                            className={`mt-1 w-full px-4 lg:py-2 xs:py-1 border rounded-lg focus:ring-2 focus:outline-none${
+                            className={`mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:outline-none ${
                                 errors.password
                                     ? "border-red-500 focus:ring-red-500"
                                     : "border-gray-300 focus:ring-purple-500"
@@ -182,7 +190,7 @@ export default function RegisterForm() {
                         type="submit"
                         className="w-full bg-indigo-500 hover:bg-sky-500 text-white font-semibold py-3 text-lg rounded-lg transition"
                     >
-                    Registrarse
+                        Registrarse
                     </button>
                 </form>
 

@@ -1,9 +1,11 @@
+'use client';
+
 import { useRef } from "react";
 import { useGLTF, Center } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 export default function Fantasmita(props) {
-    const { scene } = useGLTF("/models/fantasmita3.glb");
+    const { scene } = useGLTF("/assets/img/fantasmita3.glb");
     const ref = useRef();
 
     useFrame((state) => {
@@ -13,6 +15,7 @@ export default function Fantasmita(props) {
             ref.current.rotation.y += 0.012;
         }
     });
+
     return (
         <group ref={ref} {...props}>
             <Center>
@@ -21,3 +24,6 @@ export default function Fantasmita(props) {
         </group>
     );
 }
+
+
+useGLTF.preload("/assets/img/fantasmita3.glb");
