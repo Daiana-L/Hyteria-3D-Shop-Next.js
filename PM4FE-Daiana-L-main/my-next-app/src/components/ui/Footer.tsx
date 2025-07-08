@@ -1,5 +1,5 @@
 import { FaInstagram } from "react-icons/fa";
-import logo from "../../../../public/assets/img/hyesteria-logo.png";
+import logo from "../../../public/assets/img/hyesteria-logo.png";
 import Image from "next/image";
 const Footer = () => {
     return (

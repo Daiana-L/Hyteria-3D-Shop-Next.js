@@ -1,7 +1,7 @@
 
 
-import Navbar from "@/components/ui/Navbar/Navbar";
-import Footer from "@/components/ui/Footer/Footer";
+import Navbar from "../../components/ui/Navbar";
+import Footer from "../../components/ui/Footer";
 import "../../styles/globals.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

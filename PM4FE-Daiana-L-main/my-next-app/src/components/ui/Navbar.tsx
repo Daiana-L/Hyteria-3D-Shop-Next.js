@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import logo from "../../../../public/assets/img/hyesteria-logo.png";
+import logo from "../../../public/assets/img/hyesteria-logo.png";
 import Link from "next/link";
 import { IoCartOutline, IoSearchOutline } from "react-icons/io5";
 import { PiUser } from "react-icons/pi";
-import { routes } from "../../../routes/index";
+import { routes } from "../../routes/index";
 import { useState } from "react";
 import {
     IoPersonOutline,
@@ -16,9 +16,9 @@ import {
     IoMenuOutline,
     IoGridOutline,
 } from "react-icons/io5";
-import { useAuthContext } from "../../../context/authContex";
+import { useAuthContext } from "../../context/authContex";
 import { IoLogOutOutline } from "react-icons/io5";
-import { useCartContext } from "../../../context/cartContext";
+import { useCartContext } from "../../context/cartContext";
 export default function Navbar() {
     const { isAuth, resetUserData } = useAuthContext();
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
