@@ -24,7 +24,7 @@ export default function MainLayout({
             <CartProvider>
                     <div className="flex flex-col bg-gray-100 text-black min-h-screen xs:w-full overflow-x-hidden">
                 <Navbar />
-                <main className="lg:mt-32 xs:mt-36 lg:mb-16 xs:mb-6 flex-grow lg:max-w-5xl xs:max-w-xl mx-auto lg:px-6 xs:px-2">
+                <main className="lg:mt-32 xs:mt-40 lg:mb-16 xs:mb-6 flex-grow lg:max-w-5xl xs:max-w-xl mx-auto lg:px-6 xs:px-2">
                     {children}
                     <ToastContainer position="top-center" autoClose={3000} />
                 </main>
