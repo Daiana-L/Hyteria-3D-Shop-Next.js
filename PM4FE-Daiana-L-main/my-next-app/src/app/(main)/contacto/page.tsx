@@ -5,7 +5,7 @@ export const Contacto = () => {
 
     return (
         <section className="text-gray-600 body-font relative"  data-aos="fade-down">
-            <div className="container lg:mt-48 xs:mt-26">
+            <div className="container lg:mt-48 xs:mt-28">
                 <div className="flex flex-col text-center w-full lg:mb-12 xs:mb-5">
                         <div className="absolute lg:-top-36 xs:-top-28 left-1/2 transform -translate-x-1/2">
                                         <div className="lg:w-32 lg:h-32 xs:w-24 xs:h-24 rounded-full overflow-hidden border-4 border-white shadow-md bg-indigo-100">
