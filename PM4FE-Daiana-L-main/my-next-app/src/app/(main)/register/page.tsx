@@ -61,7 +61,7 @@ export default function RegisterForm() {
     };
     <AOSInitializer />
     return (
-        <div className="relative bg-white lg:p-8 xs:p-0 rounded-2xl shadow-lg lg:w-[60vh] xs:w-[40vh] xs:mt-8">
+        <div className="relative bg-white lg:p-8 xs:p-0 rounded-2xl shadow-lg lg:w-[60vh] xs:w-[48vh] xs:mt-6">
             <div className="bg-white p-8 rounded-2xl w-full max-w-sm">
                 <div className="absolute -top-10 left-1/2 transform ml-20">
                     <div className="lg:w-32 lg:h-32 xs:w-20 xs:h-20 rounded-full overflow-hidden border-4 border-white shadow-md bg-indigo-100 mt-5">
