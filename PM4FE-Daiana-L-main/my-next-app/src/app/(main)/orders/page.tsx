@@ -2,20 +2,21 @@
 
 import React, { useState, useEffect } from "react";
 import { useAuthContext } from "../../../context/authContex";
-import { Order} from "../../../types/index";
+import { Order } from "../../../types/index";
 import { toast } from "react-toastify";
 import { getUserOrders } from "../../../components/api/auth/fetchOrders";
 import { FaBoxOpen } from "react-icons/fa";
 import Image from "next/image";
 import AOSInitializer from "@/components/models/AOSInitializer";
 import "aos/dist/aos.css";
-
+import Link from "next/link";
+import { routes } from "@/routes";
 export default function Orders() {
     const { token } = useAuthContext();
     const [orders, setOrders] = useState<Order[]>([]);
     const [loading, setLoading] = useState(true);
 
-    <AOSInitializer />
+    <AOSInitializer />;
     useEffect(() => {
         const fetchOrders = async () => {
             if (!token) return;
@@ -36,8 +37,24 @@ export default function Orders() {
 
     if (loading) {
         return (
-            <div className="w-full p-10 flex justify-center items-center">
-                <p className="text-gray-500">Cargando pedidos...</p>
+            <div className="flex flex-col justify-center lg:mt-10 xs:mt-10 ">
+                <Image
+                    src="/assets/img/pet6.png"
+                    alt="Avatar de usuario"
+                    width={128}
+                    height={128}
+                    className="object-contain ml-16"
+                />
+                <p className="text-center text-lg mt-10 text-gray-800">
+                    inicia sesion para ver tu ordenes!
+                </p>
+                <Link
+                    className="bg-violet-600 text-white flex justify-center
+                            rounded-xl mt-5 h-7 w-20 ml-20"
+                    href={routes.login}
+                >
+                    ir al login
+                </Link>
             </div>
         );
     }
