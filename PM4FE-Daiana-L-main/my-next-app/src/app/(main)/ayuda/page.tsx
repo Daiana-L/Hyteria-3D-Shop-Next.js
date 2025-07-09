@@ -2,7 +2,7 @@
 import Image from "next/image";
 export default function Ayuda() {
     return (
-        <section className="lg:mt-36 xs:mt-28 lg:px-4" data-aos="fade-down">
+        <section className="lg:mt-36 xs:mt-20 lg:px-4" data-aos="fade-down">
             <div className="relative bg-white p-6 rounded-3xl shadow-lg text-center">
                 <div className="absolute lg:-top-28 xs:-top-20 left-1/2 transform -translate-x-1/2">
                     <div className="lg:w-32 lg:h-32 xs:w-24 xs:h-24 rounded-full overflow-hidden border-4 border-white shadow-md bg-indigo-100">
