@@ -88,7 +88,7 @@ export default async function ProductDetail(props: {
                                     })}
                                 </span>
 
-                                <div className="ml-10 bg-indigo-500 text-white rounded-2xl lg:h-10 lg:px-2 lg:ml-6 transition-all hover:bg-sky-500 xs:text-lg lg:text-sm">
+                                <div className="ml-10 bg-indigo-500 text-white rounded-3xl lg:h-10 lg:px-2 lg:ml-6 transition-all hover:bg-sky-500 xs:text-lg lg:text-sm">
                                     <AddToCartButton product={product} />
                                 </div>
 
