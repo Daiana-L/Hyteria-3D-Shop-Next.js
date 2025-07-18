@@ -36,7 +36,7 @@ export default function ProductCard({ product}: Props) {
                 />
             </Link>
 
-            <div className="lg:p-4 flex-1 flex flex-col lg:justify-between xs:justify-around xs:p-2">
+            <div className="lg:p-4 flex-1 flex flex-col lg:justify-between xs:p-2">
                 <div>
                     <h2 className="lg:text-lg font-semibold text-gray-800 ">{product.name}</h2>
                     <p className="hidden lg:block lg:text-sm text-gray-600 lg:mt-1 line-clamp-4">{product.description}</p>
