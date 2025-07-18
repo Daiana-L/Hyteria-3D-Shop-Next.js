@@ -60,7 +60,7 @@ export default function Cart() {
     }, []);
 
     return (
-        <section className="py-6 lg:w-[120vh] lg:h-[70vh]" data-aos="fade-down">
+        <section className="lg:py-6 xs:py-3 lg:w-[120vh] lg:h-[70vh]" data-aos="fade-down">
             <div className="bg-white lg:p-8 xs:p-4 rounded-3xl shadow-xl">
                 <h1 className="lg:text-3xl xs:text-xl font-bold text-center flex items-center justify-center gap-3 mb-4 text-indigo-600">
                     Carrito de compras
