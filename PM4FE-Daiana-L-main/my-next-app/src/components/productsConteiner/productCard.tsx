@@ -58,12 +58,15 @@ export default function ProductCard({ product }: Props) {
                 <div className="flex gap-2 mt-4">
                     <Link
                         href={generarUrl(product.id)}
-                        className="bg-indigo-500 text-white rounded-md flex items-center justify-center transition-all hover:bg-sky-500 xs:text-xs lg:text-sm xs:h-8 xs:w-20 lg:h-10 lg:w-28"
+                        className="bg-indigo-500 text-white rounded-md flex items-center justify-center transition-all hover:bg-sky-500 text-xs lg:text-sm h-9 w-24 lg:h-10 lg:w-28"
                     >
                         Ver detalles
                     </Link>
 
-                    <AddToCartButton product={product} className="xs:h-8 lg:h-10 xs:text-xs" />
+                    <AddToCartButton
+                        product={product}
+                        className="h-9 w-24 lg:h-10 lg:w-28 text-xs"
+                    />
                 </div>
             </div>
         </div>
