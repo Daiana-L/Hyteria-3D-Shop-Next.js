@@ -36,8 +36,9 @@ export default function ProductCard({ product }: Props) {
                 />
             </Link>
 
-            <div className="p-3 lg:p-4 flex flex-col space-y-2">
-                <div className="space-y-1">
+            <div className="p-3 lg:p-4 flex flex-col h-full">
+                {/* Contenido: ocupa todo el espacio disponible */}
+                <div className="flex-grow space-y-1">
                     <h2 className="text-sm lg:text-lg font-semibold text-gray-800 line-clamp-2">
                         {product.name}
                     </h2>
@@ -55,7 +56,8 @@ export default function ProductCard({ product }: Props) {
                     </p>
                 </div>
 
-                <div className="flex gap-2 pt-2">
+                {/* Botones siempre abajo */}
+                <div className="mt-3 flex gap-2">
                     <Link
                         href={generarUrl(product.id)}
                         className="bg-indigo-500 text-white rounded-md flex items-center justify-center transition-all hover:bg-sky-500 text-xs lg:text-sm h-8 w-20 lg:h-10 lg:w-28"
