@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -12,7 +13,7 @@ interface Props {
     className?: string;
 }
 
-export default function AddToCartButton({ product }: Props) {
+export default function AddToCartButton({ product, className = "" }: Props) {
     const { isAuth } = useAuthContext();
     const { addToCart, cart } = useCartContext();
     const router = useRouter();
@@ -23,7 +24,7 @@ export default function AddToCartButton({ product }: Props) {
             router.push(routes.login);
             return;
         }
-        if (isInCart) return; 
+        if (isInCart) return;
         addToCart(product);
         toast.success("Producto añadido al carrito!");
     };
@@ -32,7 +33,9 @@ export default function AddToCartButton({ product }: Props) {
         <button
             onClick={handleAddToCart}
             disabled={isInCart}
-            className={`bg-indigo-500 text-white rounded-md lg:h-10 lg:px-2 lg:ml-6 transition-all hover:bg-sky-500 xs:text-xs lg:text-sm ${isInCart ? "opacity-50 cursor-not-allowed hover:bg-indigo-500" : ""}`}
+            className={`bg-indigo-500 text-white rounded-md transition-all hover:bg-sky-500
+                ${isInCart ? "opacity-50 cursor-not-allowed hover:bg-indigo-500" : ""}
+                ${className}`}
         >
             {isInCart ? "Ya en el carrito" : "Agregar al Carrito"}
         </button>
