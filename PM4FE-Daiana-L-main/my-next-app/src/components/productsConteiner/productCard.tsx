@@ -19,7 +19,7 @@ export default function ProductCard({ product}: Props) {
 
     return (
         <div
-            className="bg-white rounded-lg shadow-md overflow-hidden xs:mt-3 lg:mt-10 lg:h-[600px] xs:h-[400px] flex flex-col group"
+            className="bg-white rounded-lg shadow-md overflow-hidden xs:mt-1 lg:mt-10 lg:h-[600px] xs:h-[400px] flex flex-col group"
             data-aos="fade-right"
             data-aos-delay="100"
         >
@@ -58,7 +58,7 @@ export default function ProductCard({ product}: Props) {
                         Ver detalles
                     </Link>
 
-                    <AddToCartButton product={product} className="lg:mt-6 xs:mt-2 xs:text-xs" />
+                    <AddToCartButton product={product} className="bg-indigo-500 text-white rounded-md lg:h-10 lg:px-2 lg:ml-6 transition-all hover:bg-sky-500 xs:text-xs lg:text-sm" />
                 </div>
             </div>
         </div>
