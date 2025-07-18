@@ -3,7 +3,7 @@ import { Badge } from "../ui/badge";
 import Escena3D from "../models/Escena3D";
 
 export const Feature1 = () => (
-    <div className="mt-6">
+    <div className="mt-4">
         <div>
             <div className="xs:p-4  grid border rounded-lg lg:container lg:py-6 xs:py-5 lg:gap-10 items-center  lg:grid-cols-2  xs:grid-cols-1">
                 <div className="flex lg:gap-10 xs:gap-3 flex-col lg:ml-16 xs:ml-3">
