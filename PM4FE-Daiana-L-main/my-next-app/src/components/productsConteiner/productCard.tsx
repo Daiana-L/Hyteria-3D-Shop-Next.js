@@ -54,9 +54,7 @@ export default function ProductCard({ product }: Props) {
                         Categoría: {product.category.name}
                     </p>
                 </div>
-
-                {/* Botones siempre abajo */}
-                <div className="mt-3 flex gap-2">
+                <div className="mt-3 flex gap-2 lg:ml-16">
                     <Link
                         href={generarUrl(product.id)}
                         className="bg-indigo-500 text-white rounded-md flex items-center justify-center transition-all hover:bg-sky-500 text-xs lg:text-sm h-8 w-20 lg:h-10 lg:w-28"
