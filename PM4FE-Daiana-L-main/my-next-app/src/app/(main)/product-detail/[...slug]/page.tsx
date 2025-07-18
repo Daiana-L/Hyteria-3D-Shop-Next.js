@@ -25,7 +25,7 @@ export default async function ProductDetail(props: {
             </Head>
 
             <section className="text-gray-600 xs:p-2">
-                <div className="lg:py-16 xs:py-6">
+                <div className="lg:py-16 xs:py-4">
                     <div className="lg:w-4/4 mx-auto flex flex-wrap">
                         {product.image && (
                             <Image

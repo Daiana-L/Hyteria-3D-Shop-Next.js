@@ -32,7 +32,7 @@ export default function AddToCartButton({ product }: Props) {
         <button
             onClick={handleAddToCart}
             disabled={isInCart}
-            className={`bg-indigo-500 text-white rounded-md lg:h-10 lg:px-2 lg:ml-6 transition-all hover:bg-sky-500 xs:text-xs lg:text-sm ${isInCart ? "opacity-50 cursor-not-allowed hover:bg-indigo-500" : ""}`}
+            className={`bg-indigo-500 text-white rounded-md lg:h-10 lg:px-2 lg:ml-6 transition-all hover:bg-sky-500  lg:text-sm ${isInCart ? "opacity-50 cursor-not-allowed hover:bg-indigo-500" : ""}`}
         >
             {isInCart ? "Ya en el carrito" : "Agregar al Carrito"}
         </button>
