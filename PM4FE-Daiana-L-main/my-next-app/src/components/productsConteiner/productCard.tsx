@@ -58,7 +58,7 @@ export default function ProductCard({ product}: Props) {
                         Ver detalles
                     </Link>
 
-                    <AddToCartButton product={product} className="lg:mt-6 xs:mt-2" />
+                    <AddToCartButton product={product} className="lg:mt-6 xs:mt-2 xs:text-xs" />
                 </div>
             </div>
         </div>
