@@ -16,7 +16,7 @@ export default function Ayuda() {
                     </div>
                 </div>
 
-                <h1 className="lg:text-3xl xs:text-2xl font-bold text-indigo-600 lg:mb-4">
+                <h1 className="lg:text-3xl xs:text-2xl font-bold text-indigo-600 lg:mb-5">
                     Ayuda y Soporte
                 </h1>
 
