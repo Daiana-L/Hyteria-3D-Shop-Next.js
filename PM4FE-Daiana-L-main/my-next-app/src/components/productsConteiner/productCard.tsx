@@ -20,7 +20,7 @@ export default function ProductCard({ product }: Props) {
 
     return (
         <div
-            className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col group xs:mt-2 lg:mt-10 min-h-[400px] lg:h-[600px]"
+            className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col group mt-2 lg:mt-10"
             data-aos="fade-right"
             data-aos-delay="100"
         >
@@ -36,7 +36,7 @@ export default function ProductCard({ product }: Props) {
                 />
             </Link>
 
-            <div className="p-2 lg:p-4 flex-1 flex flex-col justify-between space-y-2">
+            <div className="p-3 lg:p-4 flex flex-col space-y-2">
                 <div className="space-y-1">
                     <h2 className="text-sm lg:text-lg font-semibold text-gray-800 line-clamp-2">
                         {product.name}
@@ -55,7 +55,7 @@ export default function ProductCard({ product }: Props) {
                     </p>
                 </div>
 
-                <div className="flex gap-2">
+                <div className="flex gap-2 pt-2">
                     <Link
                         href={generarUrl(product.id)}
                         className="bg-indigo-500 text-white rounded-md flex items-center justify-center transition-all hover:bg-sky-500 text-xs lg:text-sm h-8 w-20 lg:h-10 lg:w-28"
