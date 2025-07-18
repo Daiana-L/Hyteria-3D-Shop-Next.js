@@ -88,7 +88,7 @@ export default async function ProductDetail(props: {
                                     })}
                                 </span>
 
-                                <div className="ml-10">
+                                <div className="ml-10 xs:text-lg">
                                     <AddToCartButton product={product} />
                                 </div>
 
