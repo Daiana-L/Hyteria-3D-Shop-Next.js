@@ -33,7 +33,7 @@ app.use(cors(
 
 app.use(express.json());
 app.use(morgan("dev"));
-
+app.options('*', cors(corsOptions));
 app.use(router);
 
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
