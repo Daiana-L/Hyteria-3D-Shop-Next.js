@@ -6,12 +6,31 @@ import { FRONTEND_URL, CRONJOB_URL } from "./config/envs";
 
 const app = express();
 
-const corsOptions = {
-  origin: "https://hyteria-3d-shop.vercel.app",
+
+const allowedOrigins: string[] = [FRONTEND_URL, CRONJOB_URL];
+
+const corsOptions: CorsOptions = {
+  origin: (origin, callback) => {
+    if (!origin) {
+      callback(null, true);
+      return;
+    }
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Origen no permitido por CORS"));
+    }
+  },
   credentials: true,
 };
 
-app.use(cors(corsOptions));
+
+
+app.use(cors({
+  origin: 'https://hyteria-3d-shop.vercel.app',
+  credentials: true,
+}));
+
 app.use(express.json());
 app.use(morgan("dev"));
 
