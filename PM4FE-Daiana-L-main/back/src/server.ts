@@ -26,10 +26,9 @@ const corsOptions: CorsOptions = {
 
 
 
-app.use(cors({
-  origin: 'https://hyteria-3d-shop.vercel.app',
-  credentials: true,
-}));
+app.use(cors(
+  corsOptions
+));
 
 app.use(express.json());
 app.use(morgan("dev"));
