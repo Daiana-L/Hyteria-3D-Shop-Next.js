@@ -46,7 +46,7 @@ export default function Page() {
                                 <Link href={routes.login} passHref>
                                     <Button
                                         size="lg"
-                                        className="gap-4 lg:bg-indigo-600/95 xs:bg-violet-600/95 text-white hover:bg-sky-500 hover:text-white rounded-xl p-2"
+                                        className="gap-4 lg:bg-indigo-600/95 xs:bg-indigo-600/95 text-white hover:bg-sky-500 hover:text-white rounded-xl p-2"
                                         variant="outline"
                                     >
                                         Iniciar sesión{" "}
