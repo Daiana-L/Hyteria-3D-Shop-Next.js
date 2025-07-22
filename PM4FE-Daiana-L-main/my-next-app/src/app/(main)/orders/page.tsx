@@ -35,9 +35,10 @@ export default function Orders() {
         fetchOrders();
     }, [token]);
 
+    
     if (loading) {
         return (
-            <div className="flex flex-col justify-center lg:mt-10 xs:mt-10 ">
+            <div className="flex flex-col justify-center lg:mt-10">
                 <Image
                     src="/assets/img/pet6.png"
                     alt="Avatar de usuario"
@@ -48,13 +49,8 @@ export default function Orders() {
                 <p className="text-center text-lg mt-10 text-gray-800">
                     inicia sesion para ver tu ordenes!
                 </p>
-                <Link
-                    className="bg-violet-600 text-white flex justify-center
-                            rounded-xl mt-5 h-7 w-20 ml-20"
-                    href={routes.login}
-                >
-                    ir al login
-                </Link>
+                <Link className="bg-violet-600 text-white flex justify-center
+                rounded-xl mt-5 h-7 w-20 ml-20" href={routes.login}>ir al login</Link>
             </div>
         );
     }
