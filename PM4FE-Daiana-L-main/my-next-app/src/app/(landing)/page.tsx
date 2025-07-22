@@ -36,7 +36,7 @@ export default function Page() {
                                 <Link href={routes.home} passHref>
                                     <Button
                                         size="lg"
-                                        className="gap-4 lg:bg-indigo-600/95 xs:bg-violet-600/95 text-white hover:bg-sky-500 hover:text-white rounded-xl p-2 px-4"
+                                        className="gap-4 lg:bg-indigo-600/95 xs:bg-indigo-600/95 text-white hover:bg-sky-500 hover:text-white rounded-xl p-2 px-4"
                                         variant="outline"
                                     >
                                         <Home className="w-4 h-4" /> Home

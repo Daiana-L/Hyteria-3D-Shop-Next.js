@@ -25,7 +25,7 @@ export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { itemsCount } = useCartContext();
     return (
-        <nav className="fixed top-0  w-full lg:bg-indigo-600/95 xs:bg-violet-600/95 backdrop-blur-md shadow z-50">
+        <nav className="fixed top-0  w-full lg:bg-indigo-600/95 xs:bg-indigo-600/95 backdrop-blur-md shadow z-50">
             <div className="flex items-center justify-between px-5  lg:py-3">
                 <Link href={routes.home} className="flex items-center">
                     <Image src={logo} alt="logo" width={140} priority />
@@ -51,7 +51,7 @@ export default function Navbar() {
                                 Categorías
                             </button>
                             {isDropdownOpen && (
-                                <div className="absolute top-full  mt-2 lg:bg-indigo-600/95 xs:bg-violet-600/95 text-white rounded-lg shadow-lg w-40 z-50">
+                                <div className="absolute top-full  mt-2 lg:bg-indigo-600/95 xs:bg-indigo-600/95 text-white rounded-lg shadow-lg w-40 z-50">
                                     <ul className="space-y-1">
                                         {[
                                             "Decoración",
@@ -95,7 +95,7 @@ export default function Navbar() {
                     <Link href={routes.cart} className="mx-2 text-white">
                         <div className="relative">
                             {itemsCount > 0 && (
-                                <span className="absolute text-xs rounded-full font-bold -top-2 -right-2 lg:bg-indigo-600/95 xs:bg-violet-600/95 text-white p-1 px-2">
+                                <span className="absolute text-xs rounded-full font-bold -top-2 -right-2 lg:bg-indigo-600/95 xs:bg-indigo-600/95 text-white p-1 px-2">
                                     {itemsCount}
                                 </span>
                             )}
@@ -131,7 +131,7 @@ export default function Navbar() {
                 <div
                     className="fixed lg:w-[480px] top-0 right-0 h-screen xs:w-[280px]
                     text-white xs:p-5 transition-all duration-300
-                    lg:bg-indigo-600/95 xs:bg-violet-600/95 shadow-2xl transform "
+                    lg:bg-indigo-600/95 xs:bg-indigo-600/95 shadow-2xl transform "
                 >
                     <button
                         onClick={() => setIsMenuOpen(false)}
@@ -155,7 +155,7 @@ export default function Navbar() {
                                 </button>
 
                                 {isDropdownOpen && (
-                                    <div className="absolute top-full mt-2 lg:bg-indigo-600/95 xs:bg-violet-600/95 text-white rounded-lg shadow-xl p-1 w-40 z-50">
+                                    <div className="absolute top-full mt-2 lg:bg-indigo-600/95 xs:bg-indigo-600/95 text-white rounded-lg shadow-xl p-1 w-40 z-50">
                                         <ul className="space-y-1">
                                             {[
                                                 "Decoración",
